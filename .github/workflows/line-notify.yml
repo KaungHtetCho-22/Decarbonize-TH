@@ -3,7 +3,7 @@ name: Notify LINE Group on GitHub Push
 on:
   push:
     branches:
-      - data-eda  
+      - data-eda
 
 jobs:
   notify:
@@ -14,4 +14,12 @@ jobs:
         run: |
           curl -X POST "https://notify-api.line.me/api/notify" \
           -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
-          -F "message=Repo: '${{ github.repository }}'\n👤 By: '${{ github.actor }}'\n🔹 Branch: '${{ github.ref }}'\n🔹 Commit: '${{ github.event.head_commit.message }}'\n Date: '$(date)'"
+          -F "message=📢 *GitHub Update Notification* 📢\n
+          🚀 *Repository:* `${{ github.repository }}`\n
+          🔥 *Updated by:* `${{ github.actor }}`\n
+          🏷 *Branch:* `${{ github.ref }}`\n
+          📝 *Commit Message:*\n
+          ```\n
+          ${{ github.event.head_commit.message }}
+          ```\n
+          🔗 [View Commit](https://github.com/${{ github.repository }}/commit/${{ github.sha }})"
