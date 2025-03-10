@@ -14,7 +14,7 @@ jobs:
         run: |
           curl -X POST "https://notify-api.line.me/api/notify" \
           -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
-          -F message="🚀 *GitHub Repository Update* 🚀" \
+          -F message="🚀 *GitHub Repository Update* 🚀 \n" \
           -F message="🔹 *Repo:* ${{ github.repository }}" \
           -F message="🔹 *Branch:* $(echo ${{ github.ref }} | sed 's/refs\/heads\///')" \
           -F message="🔹 *Author:* ${{ github.actor }}" \
