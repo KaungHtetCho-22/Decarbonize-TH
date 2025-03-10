@@ -1,0 +1,13 @@
+services:
+  a1_assignment:
+    image: decarbonize-th:devel
+    container_name: devel-decarbonize
+    stdin_open: true
+    tty: true
+    working_dir: ${PWD}
+    environment:
+      - PYTHONPATH=${PWD}
+    volumes:
+      - ${PWD}:${PWD}
+      # - ${PWD}/weights/:/models/weights
+    entrypoint: ["/bin/bash"]
