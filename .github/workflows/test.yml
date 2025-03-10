@@ -1,0 +1,26 @@
+name: Test CI Workflow
+
+on:
+  push:
+    paths:
+      - '.github/workflows/test.yml'
+      - 'Decarbonize-TH/**'
+  pull_request:
+    paths:
+      - '.github/workflows/test.yml'
+      - 'Decarbonize-TH/**'
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Print a Message
+        run: echo "GitHub Actions is working correctly!"
+
+      - name: List Files in Decarbonize-TH Folder
+        run: ls -al Decarbonize-TH
