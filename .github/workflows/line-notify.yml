@@ -14,10 +14,10 @@ jobs:
         run: |
           curl -X POST "https://notify-api.line.me/api/notify" \
           -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
-          -F "message=🚀 *GitHub Repository Update* 🚀\n
-          🔹 *Repo:* ${{ github.repository }}\n
-          🔹 *Branch:* $(echo ${{ github.ref }} | sed 's/refs\/heads\///')\n
-          🔹 *Author:* ${{ github.actor }}\n
-          🔹 *Commit Message:*\n
-          ➜ ${{ github.event.head_commit.message }}\n\n
-          🔗 [View Commit](https://github.com/${{ github.repository }}/commit/${{ github.sha }})"
+          -F message="🚀 *GitHub Repository Update* 🚀" \
+          -F message="🔹 *Repo:* ${{ github.repository }}" \
+          -F message="🔹 *Branch:* $(echo ${{ github.ref }} | sed 's/refs\/heads\///')" \
+          -F message="🔹 *Author:* ${{ github.actor }}" \
+          -F message="🔹 *Commit Message:*" \
+          -F message="➜ ${{ github.event.head_commit.message }}" \
+          -F message="🔗 [View Commit](https://github.com/${{ github.repository }}/commit/${{ github.sha }})"
