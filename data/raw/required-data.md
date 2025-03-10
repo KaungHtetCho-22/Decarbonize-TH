@@ -45,4 +45,4 @@
 - World Bank & IMF Data
 - Carbon Emissions Data from Global Carbon Atlas
 
-# May be we need more DATA to clean
+# May be we need more DATA to get cleaned data
