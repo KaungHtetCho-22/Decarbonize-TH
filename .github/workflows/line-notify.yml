@@ -12,12 +12,10 @@ jobs:
     steps:
       - name: Send LINE Notification
         run: |
+          BRANCH_NAME=$(echo ${{ github.ref }} | sed 's/refs\/heads\///')
+          COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
+          COMMIT_URL="https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
+          
           curl -X POST "https://notify-api.line.me/api/notify" \
           -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
-          -F message="🚀 *GitHub Repository Update* 🚀 \n" \
-          -F message="🔹 *Repo:* ${{ github.repository }}" \
-          -F message="🔹 *Branch:* $(echo ${{ github.ref }} | sed 's/refs\/heads\///')" \
-          -F message="🔹 *Author:* ${{ github.actor }}" \
-          -F message="🔹 *Commit Message:*" \
-          -F message="➜ ${{ github.event.head_commit.message }}" \
-          -F message="🔗 [View Commit](https://github.com/${{ github.repository }}/commit/${{ github.sha }})"
+          -F message="🚀 *GitHub Update Notification*\n👤 *${{ github.actor }}* pushed to *${BRANCH_NAME}* in *${{ github.repository }}*\n\n📝 *Commit Message:*\n➜ ${COMMIT_MESSAGE}\n\n🔗 [View Commit](${COMMIT_URL})"
