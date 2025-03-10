@@ -19,4 +19,4 @@ jobs:
           
           curl -X POST "https://notify-api.line.me/api/notify" \
           -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
-          -F message="🚀 *GitHub Update Notification*\n\n👤 *${{ github.actor }}* pushed to *${BRANCH_NAME}* in *${{ github.repository }}*\n\n📝 *Commit Message:*\n➜ ${COMMIT_MESSAGE}\n\n🔗 [View Commit](${COMMIT_URL})"
+          -F message="Check on the data/raw folder"
