@@ -1,0 +1,17 @@
+name: Notify LINE Group on GitHub Push
+
+on:
+  push:
+    branches:
+      - data-eda  
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send LINE Notification
+        run: |
+          curl -X POST "https://notify-api.line.me/api/notify" \
+          -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
+          -F "message=Repo: '${{ github.repository }}'\n👤 By: '${{ github.actor }}'\n🔹 Branch: '${{ github.ref }}'\n🔹 Commit: '${{ github.event.head_commit.message }}'\n Date: '$(date)'"
