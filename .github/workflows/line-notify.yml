@@ -3,17 +3,23 @@ name: Notify LINE Group on GitHub Push
 on:
   push:
     branches:
-      - data-eda
+      - data-eda 
 
 jobs:
   notify:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4  
+
       - name: Format Message and Send to LINE Notify
         run: |
-          BRANCH_NAME=$(echo ${{ github.ref }} 
-          COMMIT_MESSAGE="${{ github.event.head_commit.message }}\n${{ github.event.head_commit.description }}"
+          BRANCH_NAME=$(echo ${{ github.ref }} | sed 's/refs\/heads\///')
+          COMMIT_MESSAGE=$(git log -1 --pretty=format:"%s%n%b")  # Get full commit message (title + body)
+          COMMIT_HASH=$(echo ${{ github.sha }} | cut -c1-7)  # Shortened commit hash
+          COMMIT_URL="https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
 
           curl -X POST "https://notify-api.line.me/api/notify" \
           -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
+          -F message="🚀 *GitHub Update Notification*\n\n👤 *${{ github.actor }}* pushed to *${BRANCH_NAME}* in *${{ github.repository }}*\n\n📝 *Commit Details:*\n➜ ${COMMIT_MESSAGE}\n\n🔗 [View Commit](${COMMIT_URL})"
