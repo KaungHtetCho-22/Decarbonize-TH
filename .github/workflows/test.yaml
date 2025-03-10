@@ -3,7 +3,7 @@ name: Test CI Workflow
 on:
   push:
     paths:
-      - '.github/workflows/test.yml'
+      - '.github/workflows/test.yaml'
       - 'Decarbonize-TH/**'
   pull_request:
     paths:
