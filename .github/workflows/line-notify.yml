@@ -12,11 +12,8 @@ jobs:
     steps:
       - name: Format Message and Send to LINE Notify
         run: |
-          BRANCH_NAME=$(echo ${{ github.ref }} | sed 's/refs\/heads\///')
-          COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
-          COMMIT_HASH=$(echo ${{ github.sha }} | cut -c1-7)  # Shortened commit hash
-          COMMIT_URL="https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
-          
+          BRANCH_NAME=$(echo ${{ github.ref }} 
+          COMMIT_MESSAGE="${{ github.event.head_commit.message }}\n${{ github.event.head_commit.description }}"
+
           curl -X POST "https://notify-api.line.me/api/notify" \
           -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
-          -F message="Check on the data/raw folder"
