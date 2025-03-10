@@ -15,10 +15,17 @@ jobs:
 
       - name: Format Message and Send to LINE Notify
         run: |
-          BRANCH_NAME=$(echo ${{ github.ref }} | sed 's/refs\/heads\///')
-          COMMIT_MESSAGE=$(git log -1 --pretty=format:"%s%n%b")  # Get full commit message (title + body)
-          COMMIT_HASH=$(echo ${{ github.sha }} | cut -c1-7)  # Shortened commit hash
+          BRANCH_NAME=$(echo "${{ github.ref }}" | sed 's/refs\/heads\///')
+          COMMIT_MESSAGE=$(git log -1 --pretty=format:"%s")  # Get only the commit title
+          COMMIT_HASH=$(echo "${{ github.sha }}" | cut -c1-7)  # Shortened commit hash
           COMMIT_URL="https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
 
-          # curl -X POST "https://notify-api.line.me/api/notify" \
-          -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
+          MESSAGE="🔔 *GitHub Push Notification*
+          📌 *Repository:* ${{ github.repository }}
+          📂 *Branch:* $BRANCH_NAME
+          🔗 *Commit:* [$COMMIT_HASH]($COMMIT_URL)
+          📝 *Message:* $COMMIT_MESSAGE"
+
+          curl -X POST https://notify-api.line.me/api/notify \
+            -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
+            -F "message=$MESSAGE"
