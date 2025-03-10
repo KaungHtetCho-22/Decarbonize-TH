@@ -3,33 +3,19 @@ name: Notify LINE Group on GitHub Push
 on:
   push:
     branches:
-      - data-eda  # Change this to your target branch
+      - main  # Change this if you want to notify on a different branch
 
 jobs:
   notify:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4  # Ensures commit history is available
-
-      - name: Send LINE Notification (Only Once)
+      - name: Send LINE Notification
         run: |
           BRANCH_NAME=$(echo ${{ github.ref }} | sed 's/refs\/heads\///')
-          COMMIT_MESSAGE=$(git log -1 --pretty=format:"%s")
-          COMMIT_HASH=$(git log -1 --pretty=format:"%h")  # Shortened commit hash
+          COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
           COMMIT_URL="https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
-
-          MESSAGE="🔔 *GitHub Push Notification*\n
-          📌 *Repository:* ${{ github.repository }}\n
-          📂 *Branch:* $BRANCH_NAME\n
-          🔗 *Commit:* [${COMMIT_HASH}](${COMMIT_URL})\n
-          📝 *Message:* ${COMMIT_MESSAGE}"
-
-          # Check if a message has already been sent in this workflow run
-          if [ ! -f /tmp/line_notify_sent ]; then
-            curl -X POST "https://notify-api.line.me/api/notify" \
-              -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
-              -F "message=${MESSAGE}"
-            touch /tmp/line_notify_sent  # Prevents duplicate notifications
-          fi
+          
+          curl -X POST "https://notify-api.line.me/api/notify" \
+          -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
+          -F message="🚀 *GitHub Update Notification*\n👤 *${{ github.actor }}* pushed to *${BRANCH_NAME}* in *${{ github.repository }}*\n\n📝 *Commit Message:*\n➜ ${COMMIT_MESSAGE}\n\n🔗 [View Commit](${COMMIT_URL})"
