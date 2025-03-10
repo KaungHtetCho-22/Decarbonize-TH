@@ -15,14 +15,5 @@ jobs:
           BRANCH_NAME=$(echo ${{ github.ref }} | sed 's/refs\/heads\///')
           COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
           COMMIT_URL="https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
-          
-          MESSAGE="🔔 *GitHub Push Notification*\n\n
-          📌 *Repository:* ${{ github.repository }}\n
-          📂 *Branch:* $BRANCH_NAME\n
-          🔗 *Commit:* [${COMMIT_HASH}](${COMMIT_URL})\n
-          📝 *Message:* ${COMMIT_MESSAGE}"
-          
-          # Send one single notification
           curl -X POST "https://notify-api.line.me/api/notify" \
-            -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
-            -F "message=${MESSAGE}"
+          -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
