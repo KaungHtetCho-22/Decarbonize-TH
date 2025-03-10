@@ -46,8 +46,3 @@
 - Carbon Emissions Data from Global Carbon Atlas
 
 # May be we need more 
-
-
-
-
-
