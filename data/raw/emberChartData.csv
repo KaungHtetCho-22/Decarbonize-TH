@@ -1,0 +1,242 @@
+﻿sep=;
+country_or_region;year;variable;generation_twh
+Thailand;2000;Bioenergy;0.53
+Thailand;2000;Clean;6.42
+Thailand;2000;Coal;18.2
+Thailand;2000;Fossil;89.1
+Thailand;2000;Gas;61.09
+Thailand;2000;Hydro;5.89
+Thailand;2000;Other Fossil;9.81
+Thailand;2000;Solar;0
+Thailand;2000;Wind;0
+Thailand;2000;Wind and solar;0
+Thailand;2001;Bioenergy;0.62
+Thailand;2001;Clean;6.79
+Thailand;2001;Coal;20.3
+Thailand;2001;Fossil;94.2
+Thailand;2001;Gas;71.23
+Thailand;2001;Hydro;6.17
+Thailand;2001;Other Fossil;2.67
+Thailand;2001;Solar;0
+Thailand;2001;Wind;0
+Thailand;2001;Wind and solar;0
+Thailand;2002;Bioenergy;0.75
+Thailand;2002;Clean;8.12
+Thailand;2002;Coal;19.29
+Thailand;2002;Fossil;100.32
+Thailand;2002;Gas;78.91
+Thailand;2002;Hydro;7.37
+Thailand;2002;Other Fossil;2.12
+Thailand;2002;Solar;0
+Thailand;2002;Wind;0
+Thailand;2002;Wind and solar;0
+Thailand;2003;Bioenergy;1.23
+Thailand;2003;Clean;8.44
+Thailand;2003;Coal;19.3
+Thailand;2003;Fossil;107.5
+Thailand;2003;Gas;85.69
+Thailand;2003;Hydro;7.21
+Thailand;2003;Other Fossil;2.51
+Thailand;2003;Solar;0
+Thailand;2003;Wind;0
+Thailand;2003;Wind and solar;0
+Thailand;2004;Bioenergy;1.84
+Thailand;2004;Clean;7.74
+Thailand;2004;Coal;20.4
+Thailand;2004;Fossil;116.39
+Thailand;2004;Gas;90.29
+Thailand;2004;Hydro;5.9
+Thailand;2004;Other Fossil;5.7
+Thailand;2004;Solar;0
+Thailand;2004;Wind;0
+Thailand;2004;Wind and solar;0
+Thailand;2005;Bioenergy;1.86
+Thailand;2005;Clean;7.53
+Thailand;2005;Coal;20.61
+Thailand;2005;Fossil;122.9
+Thailand;2005;Gas;94.47
+Thailand;2005;Hydro;5.67
+Thailand;2005;Other Fossil;7.82
+Thailand;2005;Solar;0
+Thailand;2005;Wind;0
+Thailand;2005;Wind and solar;0
+Thailand;2006;Bioenergy;1.99
+Thailand;2006;Clean;9.98
+Thailand;2006;Coal;24.47
+Thailand;2006;Fossil;126.8
+Thailand;2006;Gas;94.44
+Thailand;2006;Hydro;7.95
+Thailand;2006;Other Fossil;7.89
+Thailand;2006;Solar;0.04
+Thailand;2006;Wind;0
+Thailand;2006;Wind and solar;0.04
+Thailand;2007;Bioenergy;2.42
+Thailand;2007;Clean;10.42
+Thailand;2007;Coal;30.88
+Thailand;2007;Fossil;132.11
+Thailand;2007;Gas;98.24
+Thailand;2007;Hydro;7.96
+Thailand;2007;Other Fossil;2.99
+Thailand;2007;Solar;0.04
+Thailand;2007;Wind;0
+Thailand;2007;Wind and solar;0.04
+Thailand;2008;Bioenergy;2.14
+Thailand;2008;Clean;9.13
+Thailand;2008;Coal;30.84
+Thailand;2008;Fossil;136.31
+Thailand;2008;Gas;104.46
+Thailand;2008;Hydro;6.95
+Thailand;2008;Other Fossil;1.01
+Thailand;2008;Solar;0.04
+Thailand;2008;Wind;0
+Thailand;2008;Wind and solar;0.04
+Thailand;2009;Bioenergy;2.25
+Thailand;2009;Clean;9.26
+Thailand;2009;Coal;29.81
+Thailand;2009;Fossil;136.64
+Thailand;2009;Gas;106.34
+Thailand;2009;Hydro;6.97
+Thailand;2009;Other Fossil;0.49
+Thailand;2009;Solar;0.04
+Thailand;2009;Wind;0
+Thailand;2009;Wind and solar;0.04
+Thailand;2010;Bioenergy;3.36
+Thailand;2010;Clean;8.77
+Thailand;2010;Coal;29.76
+Thailand;2010;Fossil;148.8
+Thailand;2010;Gas;118.44
+Thailand;2010;Hydro;5.35
+Thailand;2010;Other Fossil;0.6
+Thailand;2010;Solar;0.06
+Thailand;2010;Wind;0
+Thailand;2010;Wind and solar;0.06
+Thailand;2011;Bioenergy;3.98
+Thailand;2011;Clean;12
+Thailand;2011;Coal;31.71
+Thailand;2011;Fossil;141.3
+Thailand;2011;Gas;108.26
+Thailand;2011;Hydro;7.93
+Thailand;2011;Other Fossil;1.33
+Thailand;2011;Solar;0.09
+Thailand;2011;Wind;0
+Thailand;2011;Wind and solar;0.09
+Thailand;2012;Bioenergy;4.7
+Thailand;2012;Clean;13.65
+Thailand;2012;Coal;34.58
+Thailand;2012;Fossil;155.31
+Thailand;2012;Gas;119.37
+Thailand;2012;Hydro;8.43
+Thailand;2012;Other Fossil;1.36
+Thailand;2012;Solar;0.5
+Thailand;2012;Wind;0.02
+Thailand;2012;Wind and solar;0.52
+Thailand;2013;Bioenergy;5.63
+Thailand;2013;Clean;12.65
+Thailand;2013;Coal;35.35
+Thailand;2013;Fossil;155.99
+Thailand;2013;Gas;119.22
+Thailand;2013;Hydro;5.41
+Thailand;2013;Other Fossil;1.42
+Thailand;2013;Solar;1.26
+Thailand;2013;Wind;0.35
+Thailand;2013;Wind and solar;1.61
+Thailand;2014;Bioenergy;6.72
+Thailand;2014;Clean;14.21
+Thailand;2014;Coal;37.57
+Thailand;2014;Fossil;159.55
+Thailand;2014;Gas;120.31
+Thailand;2014;Hydro;5.16
+Thailand;2014;Other Fossil;1.67
+Thailand;2014;Solar;1.93
+Thailand;2014;Wind;0.4
+Thailand;2014;Wind and solar;2.33
+Thailand;2015;Bioenergy;7.34
+Thailand;2015;Clean;13.81
+Thailand;2015;Coal;34.58
+Thailand;2015;Fossil;164.02
+Thailand;2015;Gas;128.52
+Thailand;2015;Hydro;3.76
+Thailand;2015;Other Fossil;0.92
+Thailand;2015;Solar;2.38
+Thailand;2015;Wind;0.33
+Thailand;2015;Wind and solar;2.71
+Thailand;2016;Bioenergy;8.6
+Thailand;2016;Clean;16.07
+Thailand;2016;Coal;37.11
+Thailand;2016;Fossil;163.75
+Thailand;2016;Gas;126.15
+Thailand;2016;Hydro;3.54
+Thailand;2016;Other Fossil;0.49
+Thailand;2016;Solar;3.55
+Thailand;2016;Wind;0.38
+Thailand;2016;Wind and solar;3.93
+Thailand;2017;Bioenergy;9.29
+Thailand;2017;Clean;19.63
+Thailand;2017;Coal;35.73
+Thailand;2017;Fossil;157.1
+Thailand;2017;Gas;121.04
+Thailand;2017;Hydro;4.69
+Thailand;2017;Other Fossil;0.33
+Thailand;2017;Solar;4.54
+Thailand;2017;Wind;1.11
+Thailand;2017;Wind and solar;5.65
+Thailand;2018;Bioenergy;11.74
+Thailand;2018;Clean;25.52
+Thailand;2018;Coal;35.8
+Thailand;2018;Fossil;152.24
+Thailand;2018;Gas;116.26
+Thailand;2018;Hydro;7.6
+Thailand;2018;Other Fossil;0.18
+Thailand;2018;Solar;4.54
+Thailand;2018;Wind;1.64
+Thailand;2018;Wind and solar;6.18
+Thailand;2019;Bioenergy;12.59
+Thailand;2019;Clean;27.72
+Thailand;2019;Coal;35.83
+Thailand;2019;Fossil;158.79
+Thailand;2019;Gas;121.84
+Thailand;2019;Hydro;6.31
+Thailand;2019;Other Fossil;1.12
+Thailand;2019;Solar;5.15
+Thailand;2019;Wind;3.67
+Thailand;2019;Wind and solar;8.82
+Thailand;2020;Bioenergy;12.29
+Thailand;2020;Clean;25.08
+Thailand;2020;Coal;36.82
+Thailand;2020;Fossil;151.4
+Thailand;2020;Gas;113.86
+Thailand;2020;Hydro;4.54
+Thailand;2020;Other Fossil;0.72
+Thailand;2020;Solar;5.03
+Thailand;2020;Wind;3.22
+Thailand;2020;Wind and solar;8.25
+Thailand;2021;Bioenergy;13.41
+Thailand;2021;Clean;26.47
+Thailand;2021;Coal;36.06
+Thailand;2021;Fossil;149.89
+Thailand;2021;Gas;113.11
+Thailand;2021;Hydro;4.54
+Thailand;2021;Other Fossil;0.72
+Thailand;2021;Solar;4.99
+Thailand;2021;Wind;3.53
+Thailand;2021;Wind and solar;8.52
+Thailand;2022;Bioenergy;13.86
+Thailand;2022;Clean;28.48
+Thailand;2022;Coal;35.52
+Thailand;2022;Fossil;151.89
+Thailand;2022;Gas;114.64
+Thailand;2022;Hydro;6.6
+Thailand;2022;Other Fossil;1.73
+Thailand;2022;Solar;5.03
+Thailand;2022;Wind;2.99
+Thailand;2022;Wind and solar;8.02
+Thailand;2023;Bioenergy;14.15
+Thailand;2023;Clean;29.77
+Thailand;2023;Coal;30.43
+Thailand;2023;Fossil;160.72
+Thailand;2023;Gas;129.4
+Thailand;2023;Hydro;6.59
+Thailand;2023;Other Fossil;0.89
+Thailand;2023;Solar;5.42
+Thailand;2023;Wind;3.61
+Thailand;2023;Wind and solar;9.03
