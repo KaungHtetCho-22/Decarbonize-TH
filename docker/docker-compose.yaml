@@ -21,8 +21,35 @@ services:
       - ../models:/app/models
       - ../reports:/app/reports
       - ../src:/app/src
+      - ../artifacts:/app/artifacts
     environment:
       - MLFLOW_TRACKING_URI=http://mlflow:5000  
-    # command: bash src/train.py
     stdin_open: true
     tty: true
+
+  carbon-api:
+    build:
+      context: ../backend
+      dockerfile: backend.Dockerfile
+    container_name: carbon-api
+    volumes:
+      - ../:/app
+    ports:
+      - "8000:5000"
+    restart: always
+    stdin_open: true
+    tty: true
+
+  carbon-ui:
+    build:
+      context: ../frontend
+      dockerfile: frontend.Dockerfile
+    container_name: carbon-ui
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    restart: always
+
+
+    
