@@ -11,11 +11,11 @@ services:
       - MLFLOW_DEFAULT_ARTIFACT_ROOT=/mlflow/mlruns
     command: mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root /mlflow/mlruns --host 0.0.0.0
 
-  ml:
+  model-training:
     build:
       context: ..
       dockerfile: docker/Dockerfile
-    container_name: ml-training
+    container_name: model-training
     volumes:
       - ../data:/app/data
       - ../models:/app/models
@@ -23,4 +23,6 @@ services:
       - ../src:/app/src
     environment:
       - MLFLOW_TRACKING_URI=http://mlflow:5000  
-    command: python3 src/train.py
+    # command: bash src/train.py
+    stdin_open: true
+    tty: true
