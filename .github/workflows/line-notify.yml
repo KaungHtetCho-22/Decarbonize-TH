@@ -1,0 +1,21 @@
+name: Notify LINE Group on GitHub Push
+
+on:
+  push:
+    branches:
+      - main  # Change this if you want to notify on a different branch
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send LINE Notification
+        run: |
+          BRANCH_NAME=$(echo ${{ github.ref }} | sed 's/refs\/heads\///')
+          COMMIT_MESSAGE="${{ github.event.head_commit.message }}"
+          COMMIT_URL="https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
+          
+          curl -X POST "https://notify-api.line.me/api/notify" \
+          -H "Authorization: Bearer ${{ secrets.LINE_NOTIFY_TOKEN }}" \
+          -F message="🚀 *GitHub Update Notification*\n👤 *${{ github.actor }}* pushed to *${BRANCH_NAME}* in *${{ github.repository }}*\n\n📝 *Commit Message:*\n➜ ${COMMIT_MESSAGE}\n\n🔗 [View Commit](${COMMIT_URL})"
