@@ -41,12 +41,12 @@ const Demo = () => {
   const [isCalculating, setIsCalculating] = useState(false);
   const [showResult, setShowResult] = useState(false);
   const [historicalData, setHistoricalData] = useState([
-    { year: "2017", emissions: 274.6 },
-    { year: "2018", emissions: 283.4 },
-    { year: "2019", emissions: 291.7 },
-    { year: "2020", emissions: 267.8 },
-    { year: "2021", emissions: 281.9 },
-    { year: "2022", emissions: 295.3 }
+    { year: "2018", emissions: 288.305 },
+    { year: "2019", emissions: 281.877 },
+    { year: "2020", emissions: 271.923 },
+    { year: "2021", emissions: 267.142 },
+    { year: "2022", emissions: 272.573 },
+    { year: "2023", emissions: 264.389 }
   ]);
   
   // Baseline for comparison (2023 baseline)

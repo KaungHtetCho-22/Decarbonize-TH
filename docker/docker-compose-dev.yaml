@@ -33,7 +33,7 @@ services:
       dockerfile: backend.Dockerfile
     container_name: carbon-api
     volumes:
-      - ../:/app
+      - ../backend:/app
     ports:
       - "8000:5000"
     restart: always

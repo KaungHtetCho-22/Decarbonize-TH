@@ -1,0 +1,33 @@
+name: Build and Deploy via Deployment Repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-push-update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Run push-prod.sh to build and tag
+      env:
+        DOCKER_HUB_USER: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+      run: |
+        chmod +x ./push-prod.sh
+        ./push-prod.sh
+
+    - name: Clone deploy repo and update image tags
+      run: |
+        git clone https://x-access-token:${{ secrets.DEPLOY_REPO_TOKEN }}@github.com/KaungHtetCho-22/Decarbonize-TH-deployment.git
+        cp docker-compose.prod.yaml Decarbonize-TH-deploy/docker-compose.prod.yaml
+        cd Decarbonize-TH-deploy
+        git config user.name "github-actions"
+        git config user.email "actions@github.com"
+        git add docker-compose.prod.yaml
+        git commit -m "Update image tags to latest commit"
+        git push
