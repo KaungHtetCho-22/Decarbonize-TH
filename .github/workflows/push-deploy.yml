@@ -15,8 +15,8 @@ jobs:
 
     - name: Run push-prod.sh to build and tag
       env:
-        DOCKER_HUB_USER: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+        DOCKER_HUB_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+        DOCKER_HUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
       run: |
         chmod +x ./push-prod.sh
         ./push-prod.sh
