@@ -5,12 +5,12 @@ if [ -z "$DOCKERHUB_USERNAME" ] || [ -z "$DOCKERHUB_TOKEN" ]; then
   exit 1
 fi
 
-cp best_model_pipeline.joblib ./backend/
+# cp best_model_pipeline.joblib ./backend/
 
-if [ ! -f best_model_pipeline.joblib ]; then
-  echo "ERROR: best_model_pipeline.joblib not found in root!"
-  exit 1
-fi
+# if [ ! -f best_model_pipeline.joblib ]; then
+#   echo "ERROR: best_model_pipeline.joblib not found in root!"
+#   exit 1
+# fi
 
 GIT_TAG=$(git describe --tags --abbrev=0) 
 
