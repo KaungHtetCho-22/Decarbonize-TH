@@ -24,7 +24,7 @@ jobs:
     - name: Clone deploy repo and update image tags
       run: |
         git clone https://x-access-token:${{ secrets.DEPLOY_REPO_TOKEN }}@github.com/KaungHtetCho-22/Decarbonize-TH-deployment.git
-        cp docker-compose.prod.yaml Decarbonize-TH-deploy/docker-compose.prod.yaml
+        cp docker-compose.prod.yaml Decarbonize-TH-deployment/docker-compose.prod.yaml
         cd Decarbonize-TH-deploy
         git config user.name "github-actions"
         git config user.email "actions@github.com"
