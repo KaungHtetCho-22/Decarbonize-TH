@@ -15,7 +15,7 @@ jobs:
 
     - name: Run push-prod.sh to build images and generate docker-compose.prod.yaml
       env:
-        DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
+        DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
         DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
       run: |
         chmod +x ./push-prod.sh
