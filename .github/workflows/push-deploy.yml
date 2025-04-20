@@ -13,21 +13,31 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Run push-prod.sh to build and tag
+    - name: Run push-prod.sh to build images and generate docker-compose.prod.yaml
       env:
-        DOCKER_HUB_USER: ${{ secrets.DOCKERHUB_USERNAME }}
-        DOCKER_HUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        DOCKER_HUB_USER: ${{ secrets.DOCKER_HUB_USER }}
+        DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
       run: |
         chmod +x ./push-prod.sh
         ./push-prod.sh
 
+    - name: Setup SSH for deploy key
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.DEPLOY_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+
     - name: Clone deploy repo and update image tags
       run: |
-        git clone https://x-access-token:${{ secrets.DEPLOY_REPO_TOKEN }}@github.com/KaungHtetCho-22/Decarbonize-TH-deployment.git
+        git clone git@github.com:KaungHtetCho-22/Decarbonize-TH-deployment.git
         cp docker-compose.prod.yaml Decarbonize-TH-deployment/docker-compose.prod.yaml
         cd Decarbonize-TH-deployment
         git config user.name "github-actions"
         git config user.email "actions@github.com"
+        
+        git remote set-url origin git@github.com:KaungHtetCho-22/Decarbonize-TH-deployment.git
+    
         git add docker-compose.prod.yaml
-        git commit -m "Update image tags to latest commit"
-        git push
+        git commit -m "Update image tags from tag ${{ github.ref_name }}"
+        git push origin main

@@ -5,8 +5,7 @@ if [ -z "$DOCKER_HUB_USER" ] || [ -z "$DOCKER_HUB_TOKEN" ]; then
   exit 1
 fi
 
-
-GIT_COMMIT=$(git rev-parse --short HEAD)
+GIT_TAG=$(git describe --tags --abbrev=0) 
 
 declare -A services
 services=( ["carbon-api"]="backend" ["carbon-ui"]="frontend" )
@@ -19,17 +18,15 @@ for SERVICE in "${!services[@]}"; do
   echo "Building $SERVICE from $CONTEXT..."
 
   docker build \
-    -t $DOCKER_HUB_USER/$SERVICE:$GIT_COMMIT \
+    -t $DOCKER_HUB_USER/$SERVICE:$GIT_TAG \
     -t $DOCKER_HUB_USER/$SERVICE:latest \
     --file "./$CONTEXT/Dockerfile" \
     "./$CONTEXT"
 
-  echo "Pushing $DOCKER_HUB_USER/$SERVICE:$GIT_COMMIT and :latest..."
-  docker push $DOCKER_HUB_USER/$SERVICE:$GIT_COMMIT
+  echo "Pushing $DOCKER_HUB_USER/$SERVICE:$GIT_TAG and :latest..."
+  docker push $DOCKER_HUB_USER/$SERVICE:$GIT_TAG
   docker push $DOCKER_HUB_USER/$SERVICE:latest
 done
-
-echo "Done! All images pushed with tag: $GIT_COMMIT and latest"
 
 echo "Writing updated docker-compose.prod.yaml..."
 
@@ -40,7 +37,7 @@ echo "services:" >> $OUTPUT_FILE
 
 for SERVICE in "${!services[@]}"; do
   echo "  $SERVICE:" >> $OUTPUT_FILE
-  echo "    image: $DOCKER_HUB_USER/$SERVICE:$GIT_COMMIT" >> $OUTPUT_FILE
+  echo "    image: $DOCKER_HUB_USER/$SERVICE:$GIT_TAG" >> $OUTPUT_FILE
   echo "    ports:" >> $OUTPUT_FILE
   if [ "$SERVICE" == "carbon-api" ]; then
     echo "      - '8000:5000'" >> $OUTPUT_FILE
