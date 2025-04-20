@@ -51,7 +51,7 @@ const Home = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8">
-              A machine learning project predicting carbon emissions in Thailand, 
+              An advanced machine learning project predicting carbon emissions in Thailand, 
               helping to build a more sustainable future through data-driven insights.
             </p>
             
