@@ -25,7 +25,7 @@ class Features(BaseModel):
     temperature_change_from_ghg: float
 
 # Load your model
-model = joblib.load("models/best_model_pipeline.joblib")  # ensure this path is correct inside Docker container
+model = joblib.load("best_model_pipeline.joblib")  # ensure this path is correct inside Docker container
 
 @app.post("/predict")
 def predict(features: Features):
