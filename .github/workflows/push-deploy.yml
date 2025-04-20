@@ -25,7 +25,7 @@ jobs:
       run: |
         git clone https://x-access-token:${{ secrets.DEPLOY_REPO_TOKEN }}@github.com/KaungHtetCho-22/Decarbonize-TH-deployment.git
         cp docker-compose.prod.yaml Decarbonize-TH-deployment/docker-compose.prod.yaml
-        cd Decarbonize-TH-deploy
+        cd Decarbonize-TH-deployment
         git config user.name "github-actions"
         git config user.email "actions@github.com"
         git add docker-compose.prod.yaml
