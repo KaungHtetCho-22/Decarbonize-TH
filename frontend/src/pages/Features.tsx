@@ -48,7 +48,7 @@ const Features = () => {
     { name: "Transport Activity (Million km)", description: "Total distance traveled by vehicles" },
     { name: "Agricultural Production (Ton)", description: "Agricultural output in tons" },
     { name: "Temperature (°C)", description: "Average annual temperature" },
-    { name: "Rainfall (mm)", description: "Annual precipitation in millimeters" }
+    { name: "Rainfall (mm)", description: "asdfsafasfsadf"}
   ];
 
   const extractedFeatures = [
