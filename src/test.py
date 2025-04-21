@@ -6,16 +6,8 @@ import os
 # === Paths ===
 model_dir = "models"
 
-# === Define columns ===
+# === Define log-transform columns only (the pipeline handles the rest)
 log_transform_cols = ['population', 'gdp']
-feature_cols = [
-    'year', 'population', 'gdp',
-    'cement_co2_per_capita', 'co2_growth_abs', 'co2_including_luc_growth_abs',
-    'co2_including_luc_per_gdp', 'co2_including_luc_per_unit_energy',
-    'co2_per_gdp', 'co2_per_unit_energy', 'coal_co2_per_capita',
-    'energy_per_capita', 'flaring_co2_per_capita',
-    'nitrous_oxide_per_capita', 'temperature_change_from_n2o'
-]
 
 # === Sample input (2023 data) ===
 data_2023 = {
@@ -40,20 +32,22 @@ data_2023 = {
 
 df = pd.DataFrame(data_2023)
 
-# === Apply log1p transform ===
+# === Apply log1p transform ONLY to raw features
 for col in log_transform_cols:
     df[col] = np.log1p(df[col])
-X_new = df[feature_cols]
 
-# === Collect predictions ===
+# === Drop unused columns
+df_input = df.drop(columns=["country", "co2"])
+
+# === Run predictions using full pipeline ===
 results = []
 
 for filename in os.listdir(model_dir):
     if filename.endswith("_best_pipeline.joblib"):
         model_path = os.path.join(model_dir, filename)
-        model = joblib.load(model_path)
+        pipeline = joblib.load(model_path)  # includes scaler + model
 
-        y_pred = model.predict(X_new)
+        y_pred = pipeline.predict(df_input)
 
         results.append({
             "model": filename.replace("_best_pipeline.joblib", ""),

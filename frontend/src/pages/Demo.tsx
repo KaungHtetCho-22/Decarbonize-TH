@@ -36,8 +36,8 @@ const Demo = () => {
     try {
       const payload = {
         ...params,
-        population: params.population * 1_000_000,
-        gdp: params.gdp * 1_000_000_000_000,
+        population: params.population,
+        gdp: params.gdp,
       };
 
       const response = await axios.post<PredictionResponse>(
