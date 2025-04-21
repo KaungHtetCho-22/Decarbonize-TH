@@ -8,7 +8,7 @@ app = FastAPI()
 # CORS for local frontend connection
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # or ["http://localhost:3000"] for security
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -25,7 +25,7 @@ class Features(BaseModel):
     temperature_change_from_ghg: float
 
 # Load your model
-model = joblib.load("best_model_pipeline.joblib")  # ensure this path is correct inside Docker container
+model = joblib.load("best_model_pipeline.joblib")  
 
 @app.post("/predict")
 def predict(features: Features):
@@ -35,7 +35,7 @@ def predict(features: Features):
         features.primary_energy_consumption,
         features.oil_co2,
         features.coal_co2,
-        features.total_ghg,
+        features.total_ghg,+
         features.co2_including_luc,
         features.temperature_change_from_ghg
     ]]

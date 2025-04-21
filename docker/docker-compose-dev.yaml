@@ -30,12 +30,12 @@ services:
   carbon-api:
     build:
       context: ../backend
-      dockerfile: backend.Dockerfile
+      dockerfile: Dockerfile
     container_name: carbon-api
     volumes:
       - ../backend:/app
     ports:
-      - "8000:5000"
+      - "8000:5050"
     restart: always
     stdin_open: true
     tty: true
@@ -43,7 +43,7 @@ services:
   carbon-ui:
     build:
       context: ../frontend
-      dockerfile: frontend.Dockerfile
+      dockerfile: Dockerfile
     container_name: carbon-ui
     ports:
       - "3000:3000"

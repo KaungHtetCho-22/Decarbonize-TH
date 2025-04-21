@@ -30,9 +30,21 @@ target_col = 'co2'
 
 feature_cols = [
     'population', 'gdp', 'primary_energy_consumption',
-    'oil_co2', 'coal_co2', 'total_ghg',
-    'co2_including_luc', 'temperature_change_from_ghg'
+    'oil_co2', 'coal_co2', 'cement_co2',
+    'total_ghg', 'co2_including_luc',
+    'temperature_change_from_ghg'
 ]
+
+# === Log transform columns ===
+log_transform_cols = [
+    'population', 'gdp', 'primary_energy_consumption',
+    'oil_co2', 'coal_co2', 'cement_co2',
+    'total_ghg', 'co2_including_luc'
+]
+
+for df in [train_df, val_df, test_df]:
+    for col in log_transform_cols:
+        df[col] = np.log1p(df[col])
 
 X_train = train_df[feature_cols]
 y_train = train_df[target_col]
@@ -41,15 +53,10 @@ y_val = val_df[target_col]
 X_test = test_df[feature_cols]
 y_test = test_df[target_col]
 
-# === Preprocessor ===
-# num_pipeline = Pipeline([
-#     ("imputer", SimpleImputer(strategy="median")),
-#     ("scaler", MinMaxScaler())
-# ])
-
+# === Feature scaling ===
 num_pipeline = Pipeline([
     ("imputer", SimpleImputer(strategy="median")),
-    ("scaler", StandardScaler())  # More robust for large range features
+    ("scaler", StandardScaler())
 ])
 
 preprocessor = ColumnTransformer([
@@ -61,6 +68,10 @@ os.makedirs("artifacts", exist_ok=True)
 target_scaler = StandardScaler()
 target_scaler.fit(y_train.values.reshape(-1, 1))
 dump(target_scaler, "artifacts/target_scaler.pkl")
+
+# Save log-transformed columns (optional for reproducibility)
+with open("artifacts/log_transform_cols.txt", "w") as f:
+    f.write("\n".join(log_transform_cols))
 
 # === Model configs ===
 model_configs = {
@@ -99,7 +110,7 @@ def optimize_hyperparameters(name, model, param_ranges, X_train, y_train, X_val,
         pipeline = Pipeline([("preprocessor", preprocessor), ("model", model)])
         pipeline.fit(X_train, y_train)
         preds = pipeline.predict(X_val)
-        return np.sqrt(mean_squared_error(y_val, preds))  # fixed
+        return np.sqrt(mean_squared_error(y_val, preds))
 
     study = optuna.create_study(direction='minimize')
     study.optimize(objective, n_trials=n_trials)
@@ -108,7 +119,7 @@ def optimize_hyperparameters(name, model, param_ranges, X_train, y_train, X_val,
     return Pipeline([("preprocessor", preprocessor), ("model", model)]), study.best_params, study.best_value
 
 # === Train & Save Models ===
-mlflow.set_experiment("co2-forecasting-pipeline")
+mlflow.set_experiment("co2-forecasting-pipeline-log-scaled")
 os.makedirs("models", exist_ok=True)
 
 best_rmse = float('inf')
@@ -116,7 +127,7 @@ best_model_name = None
 best_pipeline = None
 
 for name, config in model_configs.items():
-    print(f"\n🔧 Training {name}...")
+    print(f"\nTraining {name}...")
     with mlflow.start_run(run_name=name):
         y_train_scaled = target_scaler.transform(y_train.values.reshape(-1, 1)).ravel()
         y_val_scaled = target_scaler.transform(y_val.values.reshape(-1, 1)).ravel()
@@ -138,6 +149,7 @@ for name, config in model_configs.items():
 
         all_metrics = {**train_metrics, **val_metrics, **test_metrics}
         mlflow.log_params(best_params)
+        mlflow.log_param("log_transform", ",".join(log_transform_cols))
         for k, v in all_metrics.items():
             mlflow.log_metric(k, v)
 

@@ -42,7 +42,7 @@ These features are:
 ```python
 df.fillna(method='ffill', inplace=True)
 df.fillna(method='bfill', inplace=True)
-
+```
 ## 🌏 Justification for Data Split Strategy: Generalization to Thailand
 
 ### ✅ Objective

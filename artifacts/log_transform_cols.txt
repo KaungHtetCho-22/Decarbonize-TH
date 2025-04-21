@@ -1,0 +1,8 @@
+population
+gdp
+primary_energy_consumption
+oil_co2
+coal_co2
+cement_co2
+total_ghg
+co2_including_luc
