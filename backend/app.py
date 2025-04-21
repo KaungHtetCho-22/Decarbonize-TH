@@ -16,48 +16,46 @@ app.add_middleware(
 )
 
 class Features(BaseModel):
+    year: int
     population: float
     gdp: float
-    primary_energy_consumption: float
-    oil_co2: float
-    coal_co2: float
-    cement_co2: float
-    total_ghg: float
-    co2_including_luc: float
-    temperature_change_from_ghg: float
+    cement_co2_per_capita: float
+    co2_growth_abs: float
+    co2_including_luc_growth_abs: float
+    co2_including_luc_per_gdp: float
+    co2_including_luc_per_unit_energy: float
+    co2_per_gdp: float
+    co2_per_unit_energy: float
+    coal_co2_per_capita: float
+    energy_per_capita: float
+    flaring_co2_per_capita: float
+    nitrous_oxide_per_capita: float
+    temperature_change_from_n2o: float
 
-log_transform_cols = [
-    "population", "gdp", "primary_energy_consumption",
-    "oil_co2", "coal_co2", "cement_co2",
-    "total_ghg", "co2_including_luc"
+log_transform_cols = ["population", "gdp"]
+
+feature_cols = [
+    'year', 'population', 'gdp',
+    'cement_co2_per_capita', 'co2_growth_abs', 'co2_including_luc_growth_abs',
+    'co2_including_luc_per_gdp', 'co2_including_luc_per_unit_energy',
+    'co2_per_gdp', 'co2_per_unit_energy', 'coal_co2_per_capita',
+    'energy_per_capita', 'flaring_co2_per_capita',
+    'nitrous_oxide_per_capita', 'temperature_change_from_n2o'
 ]
 
-feature_cols = log_transform_cols + ["temperature_change_from_ghg"]
-
-model = joblib.load("xgboost_best_pipeline.joblib")  # Must match your frontend call
+# Load pipeline (includes scaler + model)
+model = joblib.load("xgboost_best_pipeline.joblib")
 
 @app.post("/predict")
 def predict(features: Features):
-    # Create a DataFrame
-    X = pd.DataFrame([{
-        "population": features.population,
-        "gdp": features.gdp,
-        "primary_energy_consumption": features.primary_energy_consumption,
-        "oil_co2": features.oil_co2,
-        "coal_co2": features.coal_co2,
-        "cement_co2": features.cement_co2,
-        "total_ghg": features.total_ghg,
-        "co2_including_luc": features.co2_including_luc,
-        "temperature_change_from_ghg": features.temperature_change_from_ghg
-    }])
+    # Convert input to DataFrame
+    X = pd.DataFrame([features.dict()])
 
-    # Apply log1p to the necessary columns
+    # Apply log1p to selected columns
     for col in log_transform_cols:
         X[col] = np.log1p(X[col])
 
-    # Predict using the full pipeline (includes StandardScaler etc.)
-    y_scaled = model.predict(X)
-    target_scaler = joblib.load("target_scaler.pkl")  # make sure this exists in container
-    y_pred = target_scaler.inverse_transform(y_scaled.reshape(-1, 1)).ravel()
+    # Predict
+    y_pred = model.predict(X)
 
     return {"prediction": round(float(y_pred[0]), 2)}

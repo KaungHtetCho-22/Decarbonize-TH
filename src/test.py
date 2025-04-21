@@ -5,34 +5,39 @@ import os
 
 # === Paths ===
 model_dir = "models"
-target_scaler_path = "artifacts/target_scaler.pkl"
-
-# === Load scaler ===
-target_scaler = joblib.load(target_scaler_path)
 
 # === Define columns ===
-log_transform_cols = [
-    'population', 'gdp', 'primary_energy_consumption',
-    'oil_co2', 'coal_co2', 'cement_co2',
-    'total_ghg', 'co2_including_luc'
+log_transform_cols = ['population', 'gdp']
+feature_cols = [
+    'year', 'population', 'gdp',
+    'cement_co2_per_capita', 'co2_growth_abs', 'co2_including_luc_growth_abs',
+    'co2_including_luc_per_gdp', 'co2_including_luc_per_unit_energy',
+    'co2_per_gdp', 'co2_per_unit_energy', 'coal_co2_per_capita',
+    'energy_per_capita', 'flaring_co2_per_capita',
+    'nitrous_oxide_per_capita', 'temperature_change_from_n2o'
 ]
-feature_cols = log_transform_cols + ["temperature_change_from_ghg"]
 
 # === Sample input (2023 data) ===
 data_2023 = {
     'year': [2023],
     'population': [71702438.0],
     'gdp': [1124143726592.0],
-    'primary_energy_consumption': [1390.812],
-    'oil_co2': [150.343],
-    'coal_co2': [59.327],
-    'cement_co2': [19.248],
-    'total_ghg': [416.852],
-    'co2_including_luc': [297.369],
-    'temperature_change_from_ghg': [0.015],
-    'co2': [264.389], 
-    'country': ['Thailand']
+    'cement_co2_per_capita': [0.293],
+    'co2_growth_abs': [5.432],
+    'co2_including_luc_growth_abs': [4.502],
+    'co2_including_luc_per_gdp': [0.273],
+    'co2_including_luc_per_unit_energy': [0.221],
+    'co2_per_gdp': [0.242],
+    'co2_per_unit_energy': [0.196],
+    'coal_co2_per_capita': [0.973],
+    'energy_per_capita': [19357.754],
+    'flaring_co2_per_capita': [0.006],
+    'nitrous_oxide_per_capita': [0.339],
+    'temperature_change_from_n2o': [0.001],
+    'country': ['Thailand'],
+    'co2': [264.389]
 }
+
 df = pd.DataFrame(data_2023)
 
 # === Apply log1p transform ===
@@ -47,11 +52,8 @@ for filename in os.listdir(model_dir):
     if filename.endswith("_best_pipeline.joblib"):
         model_path = os.path.join(model_dir, filename)
         model = joblib.load(model_path)
-        
-        # Predict
-        y_scaled = model.predict(X_new)
-        y_log = target_scaler.inverse_transform(y_scaled.reshape(-1, 1)).ravel()
-        y_pred = y_log  # No np.expm1 needed since target was not log-transformed
+
+        y_pred = model.predict(X_new)
 
         results.append({
             "model": filename.replace("_best_pipeline.joblib", ""),
@@ -61,5 +63,5 @@ for filename in os.listdir(model_dir):
 # === Display results ===
 results_df = pd.DataFrame(results).sort_values("predicted_co2")
 print("\n=== Model Comparison: Predicted CO₂ for Thailand in 2023 ===")
-print('\nActual results = 264.389 ===')
+print('\nActual CO₂ = 264.389 ===')
 print(results_df.to_string(index=False))

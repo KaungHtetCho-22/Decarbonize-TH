@@ -3,26 +3,22 @@ import numpy as np
 import joblib
 import os
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score, mean_absolute_percentage_error
+import matplotlib.pyplot as plt
 
 # === Load test data ===
-test_df = pd.read_csv("data/processed/test.csv")
-
-# === Load target scaler ===
-target_scaler = joblib.load("artifacts/target_scaler.pkl")
+test_df = pd.read_csv("data/processed/test_clean.csv")
 
 # === Define columns ===
 feature_cols = [
-    'population', 'gdp', 'primary_energy_consumption',
-    'oil_co2', 'coal_co2', 'cement_co2',
-    'total_ghg', 'co2_including_luc',
-    'temperature_change_from_ghg'
+    'year', 'population', 'gdp',
+    'cement_co2_per_capita', 'co2_growth_abs', 'co2_including_luc_growth_abs',
+    'co2_including_luc_per_gdp', 'co2_including_luc_per_unit_energy',
+    'co2_per_gdp', 'co2_per_unit_energy', 'coal_co2_per_capita',
+    'energy_per_capita', 'flaring_co2_per_capita',
+    'nitrous_oxide_per_capita', 'temperature_change_from_n2o'
 ]
 
-log_transform_cols = [
-    'population', 'gdp', 'primary_energy_consumption',
-    'oil_co2', 'coal_co2', 'cement_co2',
-    'total_ghg', 'co2_including_luc'
-]
+log_transform_cols = ['population', 'gdp']
 
 # === Preprocess test data ===
 for col in log_transform_cols:
@@ -42,6 +38,7 @@ def evaluate(y_true, y_pred):
 # === Evaluate each model ===
 results = []
 model_dir = "models"
+os.makedirs("feature_importances", exist_ok=True)
 
 for fname in os.listdir(model_dir):
     if fname.endswith("_best_pipeline.joblib"):
@@ -49,8 +46,7 @@ for fname in os.listdir(model_dir):
         model = joblib.load(model_path)
         model_name = fname.replace("_best_pipeline.joblib", "")
 
-        y_pred_scaled = model.predict(X_test)
-        y_pred = target_scaler.inverse_transform(y_pred_scaled.reshape(-1, 1)).ravel()
+        y_pred = model.predict(X_test)
 
         metrics = evaluate(y_test, y_pred)
         results.append({
@@ -60,6 +56,17 @@ for fname in os.listdir(model_dir):
             "r2": round(metrics["r2"], 4),
             "mape": round(metrics["mape"], 4)
         })
+
+        # === Save prediction plot ===
+        plt.figure()
+        plt.scatter(y_test, y_pred, alpha=0.7)
+        plt.xlabel("True CO₂")
+        plt.ylabel("Predicted CO₂")
+        plt.title(f"{model_name} Predictions vs True Values")
+        plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], '--r')
+        plt.tight_layout()
+        plt.savefig(f"feature_importances/{model_name}_test_predictions.png")
+        plt.close()
 
 # === Display results ===
 results_df = pd.DataFrame(results).sort_values("rmse")
