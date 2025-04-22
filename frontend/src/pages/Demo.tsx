@@ -1,6 +1,7 @@
+
 import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Slider } from "@/components/ui/slider";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
@@ -8,6 +9,7 @@ import { motion } from "framer-motion";
 import { ArrowUp, ArrowDown } from "lucide-react";
 import axios from "axios";
 import { PredictionPayload, PredictionResponse } from "@/types/prediction";
+<<<<<<< HEAD
 import { BASELINE_2023, sliderConfigs } from "@/config/sliderConfig";
 
 const Demo = () => {
@@ -15,6 +17,15 @@ const Demo = () => {
     return sliderConfigs.reduce((acc, config) => {
       return { ...acc, [config.id]: config.initialValue };
     }, {} as Record<keyof PredictionPayload, number>);
+=======
+import { BASELINE_2023, inputConfigs } from "@/config/inputConfig";
+
+const Demo = () => {
+  const [params, setParams] = useState(() => {
+    return inputConfigs.reduce((acc, config) => {
+      return { ...acc, [config.id]: config.initialValue };
+    }, {} as Record<keyof Omit<PredictionPayload, 'year'>, number>);
+>>>>>>> 84a8efb (refactored version)
   });
   const [isLoading, setIsLoading] = useState(false);
   const [prediction, setPrediction] = useState<number | null>(null);
@@ -25,9 +36,18 @@ const Demo = () => {
       : null;
 
   const isIncrease = prediction !== null ? prediction > BASELINE_2023 : false;
+  
 
+<<<<<<< HEAD
   const handleChange = (key: keyof PredictionPayload, value: number) => {
     setParams((prev) => ({ ...prev, [key]: value }));
+=======
+  const handleChange = (id: keyof Omit<PredictionPayload, 'year'>, value: string) => {
+    setParams((prev) => ({
+      ...prev,
+      [id]: value === "" ? 0 : Number(value),
+    }));
+>>>>>>> 84a8efb (refactored version)
   };
 
   const handlePredict = async () => {
@@ -35,9 +55,20 @@ const Demo = () => {
     setPrediction(null);
     try {
       const payload = {
+<<<<<<< HEAD
         ...params,
         population: params.population,
         gdp: params.gdp,
+=======
+        year: 2023,
+        population: params.population * 1_000_000,
+        gdp: params.gdp * 100_000_000_000,
+        ...Object.fromEntries(
+          Object.entries(params).filter(([key]) => 
+            key !== "population" && key !== "gdp"
+          )
+        ),
+>>>>>>> 84a8efb (refactored version)
       };
 
       const response = await axios.post<PredictionResponse>(
@@ -81,7 +112,7 @@ const Demo = () => {
               Thailand CO₂ Emissions Prediction
             </CardTitle>
             <CardDescription className="mb-2">
-              Adjust parameters below and run the model to forecast total annual CO₂ emissions.
+              Enter values below and run the model to forecast total annual CO₂ emissions.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -92,6 +123,7 @@ const Demo = () => {
                 handlePredict();
               }}
             >
+<<<<<<< HEAD
               <div className="grid gap-6">
                 {sliderConfigs.map((config) => (
                   <div key={config.id}>
@@ -113,6 +145,23 @@ const Demo = () => {
                       <span>{config.min}</span>
                       <span>{config.max}</span>
                     </div>
+=======
+              <div className="grid gap-6 md:grid-cols-2">
+                {inputConfigs.map((config) => (
+                  <div key={config.id} className="space-y-2">
+                    <Label htmlFor={config.id}>
+                      {config.label}
+                      {config.unit && <span className="text-muted-foreground ml-1">({config.unit})</span>}
+                    </Label>
+                    <Input
+                      id={config.id}
+                      type="number"
+                      step="any"
+                      value={params[config.id]}
+                      onChange={(e) => handleChange(config.id, e.target.value)}
+                      placeholder={config.initialValue.toString()}
+                    />
+>>>>>>> 84a8efb (refactored version)
                   </div>
                 ))}
               </div>

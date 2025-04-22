@@ -3,13 +3,17 @@ import numpy as np
 import joblib
 import os
 
-# === Paths ===
 model_dir = "models"
 
+<<<<<<< HEAD
 # === Define log-transform columns only (the pipeline handles the rest)
 log_transform_cols = ['population', 'gdp']
 
 # === Sample input (2023 data) ===
+=======
+log_transform_cols = ['population', 'gdp']
+
+>>>>>>> 84a8efb (refactored version)
 data_2023 = {
     'year': [2023],
     'population': [71702438.0],
@@ -32,6 +36,7 @@ data_2023 = {
 
 df = pd.DataFrame(data_2023)
 
+<<<<<<< HEAD
 # === Apply log1p transform ONLY to raw features
 for col in log_transform_cols:
     df[col] = np.log1p(df[col])
@@ -40,12 +45,23 @@ for col in log_transform_cols:
 df_input = df.drop(columns=["country", "co2"])
 
 # === Run predictions using full pipeline ===
+=======
+for col in log_transform_cols:
+    df[col] = np.log1p(df[col])
+
+df_input = df.drop(columns=["country", "co2"])
+
+>>>>>>> 84a8efb (refactored version)
 results = []
 
 for filename in os.listdir(model_dir):
     if filename.endswith("_best_pipeline.joblib"):
         model_path = os.path.join(model_dir, filename)
+<<<<<<< HEAD
         pipeline = joblib.load(model_path)  # includes scaler + model
+=======
+        pipeline = joblib.load(model_path)  
+>>>>>>> 84a8efb (refactored version)
 
         y_pred = pipeline.predict(df_input)
 
@@ -54,7 +70,6 @@ for filename in os.listdir(model_dir):
             "predicted_co2": round(y_pred[0], 2)
         })
 
-# === Display results ===
 results_df = pd.DataFrame(results).sort_values("predicted_co2")
 print("\n=== Model Comparison: Predicted CO₂ for Thailand in 2023 ===")
 print('\nActual CO₂ = 264.389 ===')
