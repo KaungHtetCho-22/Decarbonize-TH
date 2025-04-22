@@ -1,0 +1,1127 @@
+[
+  {
+    "x": "population",
+    "y": "population",
+    "value": 1.0
+  },
+  {
+    "x": "population",
+    "y": "gdp",
+    "value": 0.64
+  },
+  {
+    "x": "population",
+    "y": "cement_co2_per_capita",
+    "value": 0.07
+  },
+  {
+    "x": "population",
+    "y": "co2_growth_abs",
+    "value": 0.48
+  },
+  {
+    "x": "population",
+    "y": "co2_including_luc_growth_abs",
+    "value": 0.24
+  },
+  {
+    "x": "population",
+    "y": "co2_including_luc_per_gdp",
+    "value": -0.06
+  },
+  {
+    "x": "population",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": -0.02
+  },
+  {
+    "x": "population",
+    "y": "co2_per_gdp",
+    "value": 0.01
+  },
+  {
+    "x": "population",
+    "y": "co2_per_unit_energy",
+    "value": 0.0
+  },
+  {
+    "x": "population",
+    "y": "coal_co2_per_capita",
+    "value": 0.07
+  },
+  {
+    "x": "population",
+    "y": "energy_per_capita",
+    "value": -0.02
+  },
+  {
+    "x": "population",
+    "y": "flaring_co2_per_capita",
+    "value": -0.02
+  },
+  {
+    "x": "population",
+    "y": "nitrous_oxide_per_capita",
+    "value": -0.05
+  },
+  {
+    "x": "population",
+    "y": "temperature_change_from_n2o",
+    "value": 0.68
+  },
+  {
+    "x": "population",
+    "y": "co2",
+    "value": 0.66
+  },
+  {
+    "x": "gdp",
+    "y": "population",
+    "value": 0.64
+  },
+  {
+    "x": "gdp",
+    "y": "gdp",
+    "value": 1.0
+  },
+  {
+    "x": "gdp",
+    "y": "cement_co2_per_capita",
+    "value": 0.17
+  },
+  {
+    "x": "gdp",
+    "y": "co2_growth_abs",
+    "value": 0.34
+  },
+  {
+    "x": "gdp",
+    "y": "co2_including_luc_growth_abs",
+    "value": 0.17
+  },
+  {
+    "x": "gdp",
+    "y": "co2_including_luc_per_gdp",
+    "value": -0.07
+  },
+  {
+    "x": "gdp",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": -0.02
+  },
+  {
+    "x": "gdp",
+    "y": "co2_per_gdp",
+    "value": 0.01
+  },
+  {
+    "x": "gdp",
+    "y": "co2_per_unit_energy",
+    "value": -0.02
+  },
+  {
+    "x": "gdp",
+    "y": "coal_co2_per_capita",
+    "value": 0.18
+  },
+  {
+    "x": "gdp",
+    "y": "energy_per_capita",
+    "value": 0.15
+  },
+  {
+    "x": "gdp",
+    "y": "flaring_co2_per_capita",
+    "value": -0.02
+  },
+  {
+    "x": "gdp",
+    "y": "nitrous_oxide_per_capita",
+    "value": -0.0
+  },
+  {
+    "x": "gdp",
+    "y": "temperature_change_from_n2o",
+    "value": 0.89
+  },
+  {
+    "x": "gdp",
+    "y": "co2",
+    "value": 0.93
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "population",
+    "value": 0.07
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "gdp",
+    "value": 0.17
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "cement_co2_per_capita",
+    "value": 1.0
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "co2_growth_abs",
+    "value": 0.09
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "co2_including_luc_growth_abs",
+    "value": 0.04
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "co2_including_luc_per_gdp",
+    "value": -0.16
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": -0.07
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "co2_per_gdp",
+    "value": 0.13
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "co2_per_unit_energy",
+    "value": -0.04
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "coal_co2_per_capita",
+    "value": 0.28
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "energy_per_capita",
+    "value": 0.47
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "flaring_co2_per_capita",
+    "value": 0.01
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "nitrous_oxide_per_capita",
+    "value": 0.05
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "temperature_change_from_n2o",
+    "value": 0.11
+  },
+  {
+    "x": "cement_co2_per_capita",
+    "y": "co2",
+    "value": 0.18
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "population",
+    "value": 0.48
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "gdp",
+    "value": 0.34
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "cement_co2_per_capita",
+    "value": 0.09
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "co2_growth_abs",
+    "value": 1.0
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "co2_including_luc_growth_abs",
+    "value": 0.54
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "co2_including_luc_per_gdp",
+    "value": 0.0
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": -0.01
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "co2_per_gdp",
+    "value": 0.14
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "co2_per_unit_energy",
+    "value": 0.06
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "coal_co2_per_capita",
+    "value": 0.07
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "energy_per_capita",
+    "value": 0.03
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "flaring_co2_per_capita",
+    "value": 0.0
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "nitrous_oxide_per_capita",
+    "value": -0.01
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "temperature_change_from_n2o",
+    "value": 0.31
+  },
+  {
+    "x": "co2_growth_abs",
+    "y": "co2",
+    "value": 0.46
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "population",
+    "value": 0.24
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "gdp",
+    "value": 0.17
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "cement_co2_per_capita",
+    "value": 0.04
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "co2_growth_abs",
+    "value": 0.54
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "co2_including_luc_growth_abs",
+    "value": 1.0
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "co2_including_luc_per_gdp",
+    "value": 0.0
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": -0.0
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "co2_per_gdp",
+    "value": 0.08
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "co2_per_unit_energy",
+    "value": 0.04
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "coal_co2_per_capita",
+    "value": 0.04
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "energy_per_capita",
+    "value": 0.01
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "flaring_co2_per_capita",
+    "value": 0.0
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "nitrous_oxide_per_capita",
+    "value": -0.0
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "temperature_change_from_n2o",
+    "value": 0.15
+  },
+  {
+    "x": "co2_including_luc_growth_abs",
+    "y": "co2",
+    "value": 0.23
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "population",
+    "value": -0.06
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "gdp",
+    "value": -0.07
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "cement_co2_per_capita",
+    "value": -0.16
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "co2_growth_abs",
+    "value": 0.0
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "co2_including_luc_growth_abs",
+    "value": 0.0
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "co2_including_luc_per_gdp",
+    "value": 1.0
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": 0.05
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "co2_per_gdp",
+    "value": 0.11
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "co2_per_unit_energy",
+    "value": 0.04
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "coal_co2_per_capita",
+    "value": -0.09
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "energy_per_capita",
+    "value": -0.12
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "flaring_co2_per_capita",
+    "value": -0.01
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "nitrous_oxide_per_capita",
+    "value": 0.22
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "temperature_change_from_n2o",
+    "value": -0.07
+  },
+  {
+    "x": "co2_including_luc_per_gdp",
+    "y": "co2",
+    "value": -0.06
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "population",
+    "value": -0.02
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "gdp",
+    "value": -0.02
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "cement_co2_per_capita",
+    "value": -0.07
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "co2_growth_abs",
+    "value": -0.01
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "co2_including_luc_growth_abs",
+    "value": -0.0
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "co2_including_luc_per_gdp",
+    "value": 0.05
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": 1.0
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "co2_per_gdp",
+    "value": -0.04
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "co2_per_unit_energy",
+    "value": 0.03
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "coal_co2_per_capita",
+    "value": -0.05
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "energy_per_capita",
+    "value": 0.0
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "flaring_co2_per_capita",
+    "value": -0.01
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "nitrous_oxide_per_capita",
+    "value": -0.03
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "temperature_change_from_n2o",
+    "value": -0.02
+  },
+  {
+    "x": "co2_including_luc_per_unit_energy",
+    "y": "co2",
+    "value": -0.02
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "population",
+    "value": 0.01
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "gdp",
+    "value": 0.01
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "cement_co2_per_capita",
+    "value": 0.13
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "co2_growth_abs",
+    "value": 0.14
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "co2_including_luc_growth_abs",
+    "value": 0.08
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "co2_including_luc_per_gdp",
+    "value": 0.11
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": -0.04
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "co2_per_gdp",
+    "value": 1.0
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "co2_per_unit_energy",
+    "value": 0.31
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "coal_co2_per_capita",
+    "value": 0.22
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "energy_per_capita",
+    "value": 0.21
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "flaring_co2_per_capita",
+    "value": 0.07
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "nitrous_oxide_per_capita",
+    "value": 0.06
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "temperature_change_from_n2o",
+    "value": 0.02
+  },
+  {
+    "x": "co2_per_gdp",
+    "y": "co2",
+    "value": 0.05
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "population",
+    "value": 0.0
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "gdp",
+    "value": -0.02
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "cement_co2_per_capita",
+    "value": -0.04
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "co2_growth_abs",
+    "value": 0.06
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "co2_including_luc_growth_abs",
+    "value": 0.04
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "co2_including_luc_per_gdp",
+    "value": 0.04
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": 0.03
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "co2_per_gdp",
+    "value": 0.31
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "co2_per_unit_energy",
+    "value": 1.0
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "coal_co2_per_capita",
+    "value": 0.03
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "energy_per_capita",
+    "value": -0.08
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "flaring_co2_per_capita",
+    "value": 0.49
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "nitrous_oxide_per_capita",
+    "value": -0.01
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "temperature_change_from_n2o",
+    "value": -0.01
+  },
+  {
+    "x": "co2_per_unit_energy",
+    "y": "co2",
+    "value": -0.0
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "population",
+    "value": 0.07
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "gdp",
+    "value": 0.18
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "cement_co2_per_capita",
+    "value": 0.28
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "co2_growth_abs",
+    "value": 0.07
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "co2_including_luc_growth_abs",
+    "value": 0.04
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "co2_including_luc_per_gdp",
+    "value": -0.09
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": -0.05
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "co2_per_gdp",
+    "value": 0.22
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "co2_per_unit_energy",
+    "value": 0.03
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "coal_co2_per_capita",
+    "value": 1.0
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "energy_per_capita",
+    "value": 0.33
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "flaring_co2_per_capita",
+    "value": -0.03
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "nitrous_oxide_per_capita",
+    "value": 0.19
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "temperature_change_from_n2o",
+    "value": 0.21
+  },
+  {
+    "x": "coal_co2_per_capita",
+    "y": "co2",
+    "value": 0.23
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "population",
+    "value": -0.02
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "gdp",
+    "value": 0.15
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "cement_co2_per_capita",
+    "value": 0.47
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "co2_growth_abs",
+    "value": 0.03
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "co2_including_luc_growth_abs",
+    "value": 0.01
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "co2_including_luc_per_gdp",
+    "value": -0.12
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": 0.0
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "co2_per_gdp",
+    "value": 0.21
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "co2_per_unit_energy",
+    "value": -0.08
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "coal_co2_per_capita",
+    "value": 0.33
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "energy_per_capita",
+    "value": 1.0
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "flaring_co2_per_capita",
+    "value": 0.14
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "nitrous_oxide_per_capita",
+    "value": 0.14
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "temperature_change_from_n2o",
+    "value": 0.16
+  },
+  {
+    "x": "energy_per_capita",
+    "y": "co2",
+    "value": 0.17
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "population",
+    "value": -0.02
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "gdp",
+    "value": -0.02
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "cement_co2_per_capita",
+    "value": 0.01
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "co2_growth_abs",
+    "value": 0.0
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "co2_including_luc_growth_abs",
+    "value": 0.0
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "co2_including_luc_per_gdp",
+    "value": -0.01
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": -0.01
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "co2_per_gdp",
+    "value": 0.07
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "co2_per_unit_energy",
+    "value": 0.49
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "coal_co2_per_capita",
+    "value": -0.03
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "energy_per_capita",
+    "value": 0.14
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "flaring_co2_per_capita",
+    "value": 1.0
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "nitrous_oxide_per_capita",
+    "value": 0.04
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "temperature_change_from_n2o",
+    "value": -0.02
+  },
+  {
+    "x": "flaring_co2_per_capita",
+    "y": "co2",
+    "value": -0.01
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "population",
+    "value": -0.05
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "gdp",
+    "value": -0.0
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "cement_co2_per_capita",
+    "value": 0.05
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "co2_growth_abs",
+    "value": -0.01
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "co2_including_luc_growth_abs",
+    "value": -0.0
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "co2_including_luc_per_gdp",
+    "value": 0.22
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": -0.03
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "co2_per_gdp",
+    "value": 0.06
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "co2_per_unit_energy",
+    "value": -0.01
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "coal_co2_per_capita",
+    "value": 0.19
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "energy_per_capita",
+    "value": 0.14
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "flaring_co2_per_capita",
+    "value": 0.04
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "nitrous_oxide_per_capita",
+    "value": 1.0
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "temperature_change_from_n2o",
+    "value": 0.06
+  },
+  {
+    "x": "nitrous_oxide_per_capita",
+    "y": "co2",
+    "value": 0.01
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "population",
+    "value": 0.68
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "gdp",
+    "value": 0.89
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "cement_co2_per_capita",
+    "value": 0.11
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "co2_growth_abs",
+    "value": 0.31
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "co2_including_luc_growth_abs",
+    "value": 0.15
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "co2_including_luc_per_gdp",
+    "value": -0.07
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": -0.02
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "co2_per_gdp",
+    "value": 0.02
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "co2_per_unit_energy",
+    "value": -0.01
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "coal_co2_per_capita",
+    "value": 0.21
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "energy_per_capita",
+    "value": 0.16
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "flaring_co2_per_capita",
+    "value": -0.02
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "nitrous_oxide_per_capita",
+    "value": 0.06
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "temperature_change_from_n2o",
+    "value": 1.0
+  },
+  {
+    "x": "temperature_change_from_n2o",
+    "y": "co2",
+    "value": 0.86
+  },
+  {
+    "x": "co2",
+    "y": "population",
+    "value": 0.66
+  },
+  {
+    "x": "co2",
+    "y": "gdp",
+    "value": 0.93
+  },
+  {
+    "x": "co2",
+    "y": "cement_co2_per_capita",
+    "value": 0.18
+  },
+  {
+    "x": "co2",
+    "y": "co2_growth_abs",
+    "value": 0.46
+  },
+  {
+    "x": "co2",
+    "y": "co2_including_luc_growth_abs",
+    "value": 0.23
+  },
+  {
+    "x": "co2",
+    "y": "co2_including_luc_per_gdp",
+    "value": -0.06
+  },
+  {
+    "x": "co2",
+    "y": "co2_including_luc_per_unit_energy",
+    "value": -0.02
+  },
+  {
+    "x": "co2",
+    "y": "co2_per_gdp",
+    "value": 0.05
+  },
+  {
+    "x": "co2",
+    "y": "co2_per_unit_energy",
+    "value": -0.0
+  },
+  {
+    "x": "co2",
+    "y": "coal_co2_per_capita",
+    "value": 0.23
+  },
+  {
+    "x": "co2",
+    "y": "energy_per_capita",
+    "value": 0.17
+  },
+  {
+    "x": "co2",
+    "y": "flaring_co2_per_capita",
+    "value": -0.01
+  },
+  {
+    "x": "co2",
+    "y": "nitrous_oxide_per_capita",
+    "value": 0.01
+  },
+  {
+    "x": "co2",
+    "y": "temperature_change_from_n2o",
+    "value": 0.86
+  },
+  {
+    "x": "co2",
+    "y": "co2",
+    "value": 1.0
+  }
+]

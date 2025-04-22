@@ -107,7 +107,23 @@ const gradientBoostingPredictions: ModelPrediction[] = [
   {"year":2023,"actual":264.389,"predicted":288.834}
 ];
 
-const gradientBoostingFeatures = {};
+const gradientBoostingFeatures = {
+  "gdp": 0.7539,
+  "cement_co2_per_capita": 0.0909,
+  "temperature_change_from_n2o": 0.0651,
+  "co2_per_gdp": 0.0453,
+  "energy_per_capita": 0.0175,
+  "coal_co2_per_capita": 0.0087,
+  "co2_growth_abs": 0.0054,
+  "population": 0.0051,
+  "nitrous_oxide_per_capita": 0.0034,
+  "co2_per_unit_energy": 0.0015,
+  "co2_including_luc_per_gdp": 0.0013,
+  "year": 0.0013,
+  "co2_including_luc_per_unit_energy": 0.0002,
+  "co2_including_luc_growth_abs": 0.0002,
+  "flaring_co2_per_capita": 0.0001
+};
 
 const catboostPredictions: ModelPrediction[] = [
   {"year":2010,"actual":241.019,"predicted":234.744},

@@ -11,7 +11,7 @@ log_transform_cols = ['population', 'gdp']
 # === Sample input (2023 data) ===
 data_2023 = {
     'year': [2023],
-    'population': [71702438.0],
+    'population': [91702438.0],
     'gdp': [1124143726592.0],
     'cement_co2_per_capita': [0.293],
     'co2_growth_abs': [5.432],
