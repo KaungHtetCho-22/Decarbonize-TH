@@ -38,16 +38,8 @@ const Demo = () => {
   const isIncrease = prediction !== null ? prediction > BASELINE_2023 : false;
   
 
-<<<<<<< HEAD
   const handleChange = (key: keyof PredictionPayload, value: number) => {
     setParams((prev) => ({ ...prev, [key]: value }));
-=======
-  const handleChange = (id: keyof Omit<PredictionPayload, 'year'>, value: string) => {
-    setParams((prev) => ({
-      ...prev,
-      [id]: value === "" ? 0 : Number(value),
-    }));
->>>>>>> 84a8efb (refactored version)
   };
 
   const handlePredict = async () => {
@@ -55,20 +47,9 @@ const Demo = () => {
     setPrediction(null);
     try {
       const payload = {
-<<<<<<< HEAD
         ...params,
         population: params.population,
         gdp: params.gdp,
-=======
-        year: 2023,
-        population: params.population * 1_000_000,
-        gdp: params.gdp * 100_000_000_000,
-        ...Object.fromEntries(
-          Object.entries(params).filter(([key]) => 
-            key !== "population" && key !== "gdp"
-          )
-        ),
->>>>>>> 84a8efb (refactored version)
       };
 
       const response = await axios.post<PredictionResponse>(
@@ -123,7 +104,6 @@ const Demo = () => {
                 handlePredict();
               }}
             >
-<<<<<<< HEAD
               <div className="grid gap-6">
                 {sliderConfigs.map((config) => (
                   <div key={config.id}>
@@ -145,23 +125,6 @@ const Demo = () => {
                       <span>{config.min}</span>
                       <span>{config.max}</span>
                     </div>
-=======
-              <div className="grid gap-6 md:grid-cols-2">
-                {inputConfigs.map((config) => (
-                  <div key={config.id} className="space-y-2">
-                    <Label htmlFor={config.id}>
-                      {config.label}
-                      {config.unit && <span className="text-muted-foreground ml-1">({config.unit})</span>}
-                    </Label>
-                    <Input
-                      id={config.id}
-                      type="number"
-                      step="any"
-                      value={params[config.id]}
-                      onChange={(e) => handleChange(config.id, e.target.value)}
-                      placeholder={config.initialValue.toString()}
-                    />
->>>>>>> 84a8efb (refactored version)
                   </div>
                 ))}
               </div>
