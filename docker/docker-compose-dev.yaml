@@ -22,7 +22,8 @@ services:
       - ../reports:/app/reports
       - ../src:/app/src
       - ../artifacts:/app/artifacts
-      - ../feature_importances:/app/src/feature_importances
+      - ../feature_importances:/app/feature_importances
+      - ../charts:/app/charts
     environment:
       - MLFLOW_TRACKING_URI=http://mlflow:5000  
     stdin_open: true

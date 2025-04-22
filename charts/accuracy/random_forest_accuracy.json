@@ -1,0 +1,122 @@
+[
+  {
+    "year": 2000,
+    "actual": 167.352,
+    "predicted": 173.213
+  },
+  {
+    "year": 2001,
+    "actual": 172.267,
+    "predicted": 180.488
+  },
+  {
+    "year": 2002,
+    "actual": 184.665,
+    "predicted": 187.818
+  },
+  {
+    "year": 2003,
+    "actual": 191.088,
+    "predicted": 195.607
+  },
+  {
+    "year": 2004,
+    "actual": 207.331,
+    "predicted": 211.872
+  },
+  {
+    "year": 2005,
+    "actual": 214.325,
+    "predicted": 216.974
+  },
+  {
+    "year": 2006,
+    "actual": 215.825,
+    "predicted": 222.306
+  },
+  {
+    "year": 2007,
+    "actual": 224.083,
+    "predicted": 236.578
+  },
+  {
+    "year": 2008,
+    "actual": 224.249,
+    "predicted": 237.093
+  },
+  {
+    "year": 2009,
+    "actual": 228.836,
+    "predicted": 235.758
+  },
+  {
+    "year": 2010,
+    "actual": 241.019,
+    "predicted": 253.129
+  },
+  {
+    "year": 2011,
+    "actual": 244.878,
+    "predicted": 251.118
+  },
+  {
+    "year": 2012,
+    "actual": 262.348,
+    "predicted": 268.739
+  },
+  {
+    "year": 2013,
+    "actual": 263.754,
+    "predicted": 270.594
+  },
+  {
+    "year": 2014,
+    "actual": 272.488,
+    "predicted": 276.495
+  },
+  {
+    "year": 2015,
+    "actual": 277.099,
+    "predicted": 274.579
+  },
+  {
+    "year": 2016,
+    "actual": 284.045,
+    "predicted": 285.961
+  },
+  {
+    "year": 2017,
+    "actual": 283.348,
+    "predicted": 284.684
+  },
+  {
+    "year": 2018,
+    "actual": 288.305,
+    "predicted": 298.956
+  },
+  {
+    "year": 2019,
+    "actual": 281.877,
+    "predicted": 291.954
+  },
+  {
+    "year": 2020,
+    "actual": 271.923,
+    "predicted": 260.667
+  },
+  {
+    "year": 2021,
+    "actual": 267.142,
+    "predicted": 270.9
+  },
+  {
+    "year": 2022,
+    "actual": 272.573,
+    "predicted": 281.046
+  },
+  {
+    "year": 2023,
+    "actual": 264.389,
+    "predicted": 277.655
+  }
+]

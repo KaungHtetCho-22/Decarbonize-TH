@@ -1,0 +1,17 @@
+{
+  "temperature_change_from_n2o": 42.9002,
+  "gdp": 19.9944,
+  "cement_co2_per_capita": 12.234,
+  "coal_co2_per_capita": 7.0124,
+  "co2_per_gdp": 5.0642,
+  "population": 4.4205,
+  "nitrous_oxide_per_capita": 1.9808,
+  "co2_including_luc_per_gdp": 1.5961,
+  "energy_per_capita": 1.4898,
+  "co2_per_unit_energy": 1.1415,
+  "flaring_co2_per_capita": 0.7614,
+  "year": 0.6883,
+  "co2_including_luc_per_unit_energy": 0.5505,
+  "co2_growth_abs": 0.1465,
+  "co2_including_luc_growth_abs": 0.0194
+}
