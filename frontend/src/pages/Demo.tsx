@@ -49,7 +49,7 @@ const Demo = () => {
       };
 
       const response = await axios.post<PredictionResponse>(
-        "http://localhost:8000/predict",
+        "/predict",
         payload,
         {
           headers: { "Content-Type": "application/json" },
