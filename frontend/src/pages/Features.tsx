@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Filter, Database, ChartBar, Users, Thermometer } from "lucide-react";
@@ -6,6 +5,7 @@ import FeatureTable from '@/components/features/FeatureTable';
 import CorrelationHeatmap from '@/components/features/CorrelationHeatmap';
 import FeatureInsights from '@/components/features/FeatureInsights';
 import FeatureCorrelationChart from '@/components/features/FeatureCorrelationChart';
+import FeatureCorrelationTable from '@/components/features/FeatureCorrelationTable';
 
 const Features = () => {
   const scrollRef = useRef(null);
@@ -96,7 +96,7 @@ const Features = () => {
                   </div>
                   <h2 className="text-2xl font-bold text-green-800">Feature Impact</h2>
                 </div>
-                <FeatureCorrelationChart className="shadow-md h-full" />
+                <FeatureCorrelationTable className="shadow-md h-full" />
               </motion.div>
               
               <motion.div
