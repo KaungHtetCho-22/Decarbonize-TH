@@ -139,11 +139,7 @@ for name, config in model_configs.items():
                 "feature": feature_cols,
                 "importance": importances
             }).sort_values(by="importance", ascending=False)
-<<<<<<< HEAD
             # importances_df.to_csv(f"feature_importances/{name}_importances.csv", index=False)
-=======
-            importances_df.to_csv(f"feature_importances/{name}_importances.csv", index=False)
->>>>>>> 84a8efb (refactored version)
 
             plt.figure(figsize=(10, 5))
             plt.barh(importances_df.feature, importances_df.importance)
