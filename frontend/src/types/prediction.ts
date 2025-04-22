@@ -20,17 +20,6 @@ export interface PredictionPayload {
     prediction: number;
   }
   
-<<<<<<< HEAD
-  export interface SliderConfig {
-    id: keyof PredictionPayload;
-    label: string;
-    min: number;
-    max: number;
-    step: number;
-    unit?: string;
-    initialValue: number;
-  }
-=======
   export interface InputConfig {
     id: keyof Omit<PredictionPayload, 'year'>;
     label: string;
@@ -38,4 +27,3 @@ export interface PredictionPayload {
     initialValue: number;
   }
   
->>>>>>> 84a8efb (refactored version)
