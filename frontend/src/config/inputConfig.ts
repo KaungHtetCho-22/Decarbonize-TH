@@ -1,3 +1,4 @@
+
 import { InputConfig } from "@/types/prediction";
 
 export const BASELINE_2023 = 264.4;

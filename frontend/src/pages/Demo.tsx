@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -49,7 +50,7 @@ const Demo = () => {
       };
 
       const response = await axios.post<PredictionResponse>(
-        "http://54.91.195.11:8000/predict",
+        "http://localhost:8000/predict",
         payload,
         {
           headers: { "Content-Type": "application/json" },
@@ -76,19 +77,19 @@ const Demo = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-blue-50 via-violet-50 to-green-50 pt-16 px-2 pb-24 animate-fade-in">
+    <div className="min-h-screen bg-green-50 pt-16 px-2 pb-24 animate-fade-in">
       <motion.div
         initial={{ opacity: 0, translateY: 24 }}
         animate={{ opacity: 1, translateY: 0 }}
         transition={{ duration: 0.7 }}
         className="max-w-3xl mx-auto"
       >
-        <Card className="shadow-md border-slate-200">
+        <Card className="card-green shadow-md border-green-200">
           <CardHeader>
-            <CardTitle className="text-slate-800 text-3xl mb-1 tracking-tight">
+            <CardTitle className="text-green-800 text-3xl mb-1 tracking-tight">
               Thailand CO₂ Emissions Prediction
             </CardTitle>
-            <CardDescription className="mb-2">
+            <CardDescription className="mb-2 text-gray-700">
               Enter values below and run the model to forecast total annual CO₂ emissions.
             </CardDescription>
           </CardHeader>
@@ -121,7 +122,7 @@ const Demo = () => {
 
               <Button
                 type="submit"
-                className="w-full text-lg py-5 bg-blue-600 hover:bg-blue-700 transition-all"
+                className="w-full text-lg py-5 bg-green-600 hover:bg-green-700 transition-all"
                 disabled={isLoading}
               >
                 {isLoading ? (
@@ -161,14 +162,14 @@ const Demo = () => {
                 transition={{ duration: 0.4 }}
                 className="mt-8"
               >
-                <Card className="w-full bg-gradient-to-br from-blue-100 via-indigo-50 to-green-100 py-6 px-4 border-blue-100 rounded-lg shadow-lg animate-[fade-in_0.8s]">
+                <Card className="w-full card-green bg-green-100 py-6 px-4 border-green-100 rounded-xl shadow-lg animate-[fade-in_0.8s]">
                   <div className="text-center">
                     <div className="text-gray-500 mb-1 text-sm">
                       Predicted Emissions (Current Configuration)
                     </div>
-                    <div className="text-5xl font-bold text-blue-800 mb-2 flex items-center justify-center">
+                    <div className="text-5xl font-bold text-green-800 mb-2 flex items-center justify-center">
                       {prediction.toFixed(1)}
-                      <span className="text-lg font-normal text-blue-600 ml-1">
+                      <span className="text-lg font-normal text-green-600 ml-1">
                         Mt CO₂
                       </span>
                     </div>

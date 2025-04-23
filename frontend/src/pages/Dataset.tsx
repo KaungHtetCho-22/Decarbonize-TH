@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { 
@@ -68,6 +67,7 @@ const cleanedData = [
   },
 ];
 
+// KEEP ONLY THE RELEVANT STEPS (REMOVE FEATURE SELECTION STEP)
 const cleaningSteps = [
   {
     title: "Initial Data Loading & Filtering",
@@ -78,13 +78,7 @@ const cleaningSteps = [
       "Select relevant features for analysis"
     ]
   },
-  {
-    title: "Feature Selection",
-    description: "Features selected using VIF threshold.",
-    details: [
-      "population, gdp, cement_co2_per_capita, co2_growth_abs, co2_including_luc_growth_abs, co2_including_luc_per_gdp, co2_including_luc_per_unit_energy, co2_per_gdp, co2_per_unit_energy, coal_co2_per_capita, energy_per_capita, flaring_co2_per_capita, nitrous_oxide_per_capita, temperature_change_from_n2o, co2"
-    ]
-  },
+  // REMOVE THE "Feature Selection" step here
   {
     title: "Missing Value Treatment",
     description: "Systematic approach to handle gaps in data",
@@ -190,58 +184,8 @@ const Dataset = () => {
             </Card>
           </motion.div>
 
-          {/* Status + Overview: adjust grid */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <Card>
-                <CardHeader>
-                  <div className="flex items-center gap-2">
-                    <CircleCheck className="h-5 w-5 text-green-600" />
-                    <CardTitle className="text-green-700">Data Quality Status</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between p-3 bg-green-50 rounded">
-                      <span>Country Code Validation</span>
-                      <span className="text-green-600">Verified</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Card>
-                <CardHeader>
-                  <div className="flex items-center gap-2">
-                    <BarChart3 className="h-8 w-8 text-green-600 mb-2" />
-                    <CardTitle className="text-green-700">Feature Selection</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div>
-                    <div className="font-medium text-green-700 mb-1">
-                      Features selected using VIF threshold
-                    </div>
-                    <div className="text-sm text-gray-600">
-                      population, gdp, cement_co2_per_capita, co2_growth_abs, co2_including_luc_growth_abs, co2_including_luc_per_gdp, co2_including_luc_per_unit_energy, co2_per_gdp, co2_per_unit_energy, coal_co2_per_capita, energy_per_capita, flaring_co2_per_capita, nitrous_oxide_per_capita, temperature_change_from_n2o, co2
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
+          {/* REMOVE Status + Overview cards grid! (Data Quality Status, Feature Selection) */}
+          {/* Removed grid/md:grid-cols-2/Status & Feature cards */}
 
           {/* Data Preprocessing Steps */}
           <Card>

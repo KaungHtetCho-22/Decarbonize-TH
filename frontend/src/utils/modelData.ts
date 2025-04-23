@@ -27,7 +27,11 @@ const xgboostFeatures = {
   "co2_per_gdp": 0.0708,
   "co2_per_unit_energy": 0.0627,
   "coal_co2_per_capita": 0.0483,
-  "co2_including_luc_per_gdp": 0.0397
+  "co2_including_luc_per_gdp": 0.0397,
+  "flaring_co2_per_capita": 0.0263,
+  "nitrous_oxide_per_capita": 0.0151,
+  "temperature_change_from_n2o": 0.0124,
+  "co2_including_luc_per_unit_energy": 0.0001,
 };
 
 const randomForestPredictions: ModelPrediction[] = [
@@ -44,7 +48,7 @@ const randomForestPredictions: ModelPrediction[] = [
   {"year":2020,"actual":271.923,"predicted":260.667},
   {"year":2021,"actual":267.142,"predicted":270.900},
   {"year":2022,"actual":272.573,"predicted":281.046},
-  {"year":2023,"actual":264.389,"predicted":277.655}
+  {"year":2023,"actual":264.389,"predicted":277.655},
 ];
 
 const randomForestFeatures = {
@@ -56,8 +60,12 @@ const randomForestFeatures = {
   "coal_co2_per_capita": 0.012,
   "nitrous_oxide_per_capita": 0.005,
   "population": 0.0038,
-  "year": 0.0016,
-  "flaring_co2_per_capita": 0.0014
+  "flaring_co2_per_capita": 0.0014,
+  "co2_including_luc_per_gdp": 0.0014,
+  "co2_per_unit_energy": 0.0006,
+  "co2_including_luc_per_unit_energy": 0.0005,
+  "co2_growth_abs": 0.0005,
+  "co2_including_luc_growth_abs": 0.0002,
 };
 
 const lightgbmPredictions: ModelPrediction[] = [
@@ -74,9 +82,8 @@ const lightgbmPredictions: ModelPrediction[] = [
   {"year":2020,"actual":271.923,"predicted":278.573},
   {"year":2021,"actual":267.142,"predicted":280.190},
   {"year":2022,"actual":272.573,"predicted":275.998},
-  {"year":2023,"actual":264.389,"predicted":269.650}
+  {"year":2023,"actual":264.389,"predicted":269.650},
 ];
-
 const lightgbmFeatures = {
   "gdp": 836,
   "co2_per_gdp": 745,
@@ -86,8 +93,12 @@ const lightgbmFeatures = {
   "co2_per_unit_energy": 355,
   "co2_including_luc_growth_abs": 319,
   "cement_co2_per_capita": 310,
-  "year": 290,
-  "co2_including_luc_per_gdp": 288
+  "co2_including_luc_per_gdp": 288,
+  "energy_per_capita": 275,
+  "coal_co2_per_capita": 268,
+  "flaring_co2_per_capita": 209,
+  "nitrous_oxide_per_capita": 157,
+  "co2_including_luc_per_unit_energy": 136
 };
 
 const gradientBoostingPredictions: ModelPrediction[] = [
@@ -119,11 +130,12 @@ const gradientBoostingFeatures = {
   "nitrous_oxide_per_capita": 0.0034,
   "co2_per_unit_energy": 0.0015,
   "co2_including_luc_per_gdp": 0.0013,
-  "year": 0.0013,
   "co2_including_luc_per_unit_energy": 0.0002,
   "co2_including_luc_growth_abs": 0.0002,
   "flaring_co2_per_capita": 0.0001
 };
+
+
 
 const catboostPredictions: ModelPrediction[] = [
   {"year":2010,"actual":241.019,"predicted":234.744},
@@ -139,7 +151,7 @@ const catboostPredictions: ModelPrediction[] = [
   {"year":2020,"actual":271.923,"predicted":300.610},
   {"year":2021,"actual":267.142,"predicted":289.136},
   {"year":2022,"actual":272.573,"predicted":281.739},
-  {"year":2023,"actual":264.389,"predicted":270.186}
+  {"year":2023,"actual":264.389,"predicted":270.186},
 ];
 
 const catboostFeatures = {
@@ -152,25 +164,13 @@ const catboostFeatures = {
   "nitrous_oxide_per_capita": 1.9808,
   "co2_including_luc_per_gdp": 1.5961,
   "energy_per_capita": 1.4898,
-  "co2_per_unit_energy": 1.1415
+  "co2_per_unit_energy": 1.1415,
+  "flaring_co2_per_capita": 0.7614,
+  "co2_including_luc_per_unit_energy": 0.5505,
+  "co2_growth_abs": 0.1465,
+  "co2_including_luc_growth_abs": 0.0194
 };
 
-// Helper function to calculate metrics
-const calculateMetrics = (predictions: ModelPrediction[]) => {
-  const n = predictions.length;
-  const mse = predictions.reduce((acc, curr) => acc + Math.pow(curr.predicted - curr.actual, 2), 0) / n;
-  const mae = predictions.reduce((acc, curr) => acc + Math.abs(curr.predicted - curr.actual), 0) / n;
-  const rmse = Math.sqrt(mse);
-  
-  const actualMean = predictions.reduce((acc, curr) => acc + curr.actual, 0) / n;
-  const totalSS = predictions.reduce((acc, curr) => acc + Math.pow(curr.actual - actualMean, 2), 0);
-  const resSS = predictions.reduce((acc, curr) => acc + Math.pow(curr.predicted - curr.actual, 2), 0);
-  const r2 = 1 - (resSS / totalSS);
-  
-  return { rmse, mae, r2 };
-};
-
-// Convert feature importance objects to arrays
 const convertFeatureImportance = (features: Record<string, number>) => {
   return Object.entries(features)
     .map(([feature, importance]) => ({ feature, importance }))
@@ -184,35 +184,55 @@ export const modelData: ModelMetrics[] = [
     id: "xgboost",
     predictions: xgboostPredictions,
     featureImportance: convertFeatureImportance(xgboostFeatures),
-    metrics: calculateMetrics(xgboostPredictions)
+    metrics: {
+      rmse: 5.8318,
+      mae: 3.9081,
+      r2: 0.9968
+    }
   },
   {
     name: "Random Forest",
     id: "random_forest",
     predictions: randomForestPredictions,
     featureImportance: convertFeatureImportance(randomForestFeatures),
-    metrics: calculateMetrics(randomForestPredictions)
+    metrics: {
+      rmse: 5.9307,
+      mae: 4.2114,
+      r2: 0.9967
+    }
   },
   {
     name: "LightGBM",
     id: "lightgbm",
     predictions: lightgbmPredictions,
     featureImportance: convertFeatureImportance(lightgbmFeatures),
-    metrics: calculateMetrics(lightgbmPredictions)
+    metrics: {
+      rmse: 6.3213,
+      mae: 4.2731,
+      r2: 0.9963
+    }
   },
   {
     name: "Gradient Boosting",
     id: "gradient_boosting",
     predictions: gradientBoostingPredictions,
     featureImportance: convertFeatureImportance(gradientBoostingFeatures),
-    metrics: calculateMetrics(gradientBoostingPredictions)
+    metrics: {
+      rmse: 17.1723,
+      mae: 11.8765,
+      r2: 0.9726
+    }
   },
   {
     name: "CatBoost",
     id: "catboost",
     predictions: catboostPredictions,
     featureImportance: convertFeatureImportance(catboostFeatures),
-    metrics: calculateMetrics(catboostPredictions)
+    metrics: {
+      rmse: 7.5339,
+      mae: 5.1476,
+      r2: 0.9947
+    }
   }
 ];
 
