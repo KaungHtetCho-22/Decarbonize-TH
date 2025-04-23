@@ -119,7 +119,7 @@ const Dataset = () => {
             covering the period from 1750 to 2023 (used only from 1950 onward due to missingness).
           </p>
           <a
-            href="https://ourworldindata.org/co2-dataset-sources"
+            href="https://ourworldindata.org/co2-emissions"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block text-green-700 hover:text-green-800 underline mb-4"

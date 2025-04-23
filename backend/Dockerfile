@@ -4,7 +4,10 @@ WORKDIR /app
 
 COPY . .
 
+RUN apt-get update && apt-get install -y libgomp1
+
 RUN pip install -r requirements.txt
+
 
 EXPOSE 5050
 
