@@ -44,7 +44,7 @@ const Footer = () => {
             <ul className="mt-4 space-y-3">
               <li>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/KaungHtetCho-22/Decarbonize-TH"
                   className="text-base text-gray-600 hover:text-green-700 flex items-center"
                   target="_blank"
                   rel="noopener noreferrer"
