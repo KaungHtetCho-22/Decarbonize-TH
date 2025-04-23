@@ -18,20 +18,20 @@ const xgboostPredictions: ModelPrediction[] = [
 ];
 
 const xgboostFeatures = {
-  "population": 0.1841,
-  "gdp": 0.1699,
-  "co2_growth_abs": 0.1023,
-  "cement_co2_per_capita": 0.0942,
-  "energy_per_capita": 0.0895,
-  "co2_including_luc_growth_abs": 0.0847,
-  "co2_per_gdp": 0.0708,
-  "co2_per_unit_energy": 0.0627,
-  "coal_co2_per_capita": 0.0483,
-  "co2_including_luc_per_gdp": 0.0397,
-  "flaring_co2_per_capita": 0.0263,
-  "nitrous_oxide_per_capita": 0.0151,
-  "temperature_change_from_n2o": 0.0124,
-  "co2_including_luc_per_unit_energy": 0.0001,
+  "temperature_change_from_n2o": 0.9487,
+  "cement_co2_per_capita": 0.016,
+  "gdp": 0.0155,
+  "co2_per_gdp": 0.0088,
+  "coal_co2_per_capita": 0.0042,
+  "energy_per_capita": 0.0039,
+  "nitrous_oxide_per_capita": 0.0018,
+  "population": 0.0003,
+  "flaring_co2_per_capita": 0.0002,
+  "co2_per_unit_energy": 0.0002,
+  "co2_including_luc_per_gdp": 0.0002,
+  "co2_growth_abs": 0.0,
+  "co2_including_luc_growth_abs": 0.0,
+  "co2_including_luc_per_unit_energy": 0.0
 };
 
 const randomForestPredictions: ModelPrediction[] = [
@@ -65,7 +65,7 @@ const randomForestFeatures = {
   "co2_per_unit_energy": 0.0006,
   "co2_including_luc_per_unit_energy": 0.0005,
   "co2_growth_abs": 0.0005,
-  "co2_including_luc_growth_abs": 0.0002,
+  "co2_including_luc_growth_abs": 0.0002
 };
 
 const lightgbmPredictions: ModelPrediction[] = [

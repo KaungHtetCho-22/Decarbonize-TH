@@ -1,9 +1,10 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pandas as pd
 import numpy as np
 import joblib
+import os
 
 app = FastAPI()
 
@@ -43,11 +44,21 @@ feature_cols = [
     'nitrous_oxide_per_capita', 'temperature_change_from_n2o'
 ]
 
-# Load pipeline (includes scaler + model)
-model = joblib.load("xgboost_best_pipeline.joblib")
+# Model names you allow
+available_models = {
+    "xgboost", "random_forest", "lightgbm", "catboost", "gradient_boosting"
+}
 
 @app.post("/predict")
-def predict(features: Features):
+def predict(features: Features, model_name: str = Query("xgboost", enum=available_models)):
+    model_path = f"{model_name}_best_pipeline.joblib"
+
+    if not os.path.exists(model_path):
+        raise HTTPException(status_code=404, detail=f"Model '{model_name}' not found.")
+
+    # Load the selected model pipeline
+    pipeline = joblib.load(model_path)
+
     # Convert input to DataFrame
     X = pd.DataFrame([features.dict()])
 
@@ -56,6 +67,9 @@ def predict(features: Features):
         X[col] = np.log1p(X[col])
 
     # Predict
-    y_pred = model.predict(X)
+    y_pred = pipeline.predict(X)
 
-    return {"prediction": round(float(y_pred[0]), 2)}
+    return {
+        "model_used": model_name,
+        "prediction": round(float(y_pred[0]), 2)
+    }
