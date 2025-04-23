@@ -55,7 +55,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
+                {/* <a
                   href="#"
                   className="text-base text-gray-600 hover:text-green-700 flex items-center"
                   target="_blank"
@@ -63,7 +63,7 @@ const Footer = () => {
                 >
                   <ExternalLink className="h-4 w-4 mr-2" />
                   Related Research
-                </a>
+                </a> */}
               </li>
             </ul>
           </div>
