@@ -70,7 +70,7 @@ const handlePredict = async () => {
 
     // Updated: Add model_name as query parameter
     const response = await axios.post<PredictionResponse>(
-      `http://localhost:8000/predict?model_name=${selectedModel}`,
+      `http://54.91.195.11:8000/predict?model_name=${selectedModel}`,
       payload,
       {
         headers: { "Content-Type": "application/json" },
