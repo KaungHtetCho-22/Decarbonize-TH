@@ -1,20 +1,76 @@
 import { ModelMetrics, ModelPrediction, ModelSummary } from "@/types/modelTypes";
 
 const xgboostPredictions: ModelPrediction[] = [
-  {"year":2010,"actual":288.109,"predicted":289.843},
-  {"year":2011,"actual":290.234,"predicted":292.017},
-  {"year":2012,"actual":292.376,"predicted":293.545},
-  {"year":2013,"actual":291.816,"predicted":293.062},
-  {"year":2014,"actual":292.142,"predicted":292.957},
-  {"year":2015,"actual":289.323,"predicted":290.651},
-  {"year":2016,"actual":290.751,"predicted":290.977},
-  {"year":2017,"actual":294.739,"predicted":293.850},
-  {"year":2018,"actual":295.358,"predicted":294.914},
-  {"year":2019,"actual":295.501,"predicted":295.377},
-  {"year":2020,"actual":277.667,"predicted":278.892},
-  {"year":2021,"actual":287.658,"predicted":286.821},
-  {"year":2022,"actual":288.710,"predicted":289.621},
-  {"year":2023,"actual":264.389,"predicted":268.900}
+  {
+    "year": 2010,
+    "actual": 241.019,
+    "predicted": 248.594
+  },
+  {
+    "year": 2011,
+    "actual": 244.878,
+    "predicted": 249.923
+  },
+  {
+    "year": 2012,
+    "actual": 262.348,
+    "predicted": 273.046
+  },
+  {
+    "year": 2013,
+    "actual": 263.754,
+    "predicted": 278.956
+  },
+  {
+    "year": 2014,
+    "actual": 272.488,
+    "predicted": 276.979
+  },
+  {
+    "year": 2015,
+    "actual": 277.099,
+    "predicted": 275.755
+  },
+  {
+    "year": 2016,
+    "actual": 284.045,
+    "predicted": 279.883
+  },
+  {
+    "year": 2017,
+    "actual": 283.348,
+    "predicted": 288.196
+  },
+  {
+    "year": 2018,
+    "actual": 288.305,
+    "predicted": 285.987
+  },
+  {
+    "year": 2019,
+    "actual": 281.877,
+    "predicted": 286.573
+  },
+  {
+    "year": 2020,
+    "actual": 271.923,
+    "predicted": 285.907
+  },
+  {
+    "year": 2021,
+    "actual": 267.142,
+    "predicted": 285.026
+  },
+  {
+    "year": 2022,
+    "actual": 272.573,
+    "predicted": 286.358
+  },
+  {
+    "year": 2023,
+    "actual": 264.389,
+    "predicted": 279.695
+  },
 ];
 
 const xgboostFeatures = {
@@ -35,20 +91,76 @@ const xgboostFeatures = {
 };
 
 const randomForestPredictions: ModelPrediction[] = [
-  {"year":2010,"actual":241.019,"predicted":253.129},
-  {"year":2011,"actual":244.878,"predicted":251.118},
-  {"year":2012,"actual":262.348,"predicted":268.739},
-  {"year":2013,"actual":263.754,"predicted":270.594},
-  {"year":2014,"actual":272.488,"predicted":276.495},
-  {"year":2015,"actual":277.099,"predicted":274.579},
-  {"year":2016,"actual":284.045,"predicted":285.961},
-  {"year":2017,"actual":283.348,"predicted":284.684},
-  {"year":2018,"actual":288.305,"predicted":298.956},
-  {"year":2019,"actual":281.877,"predicted":291.954},
-  {"year":2020,"actual":271.923,"predicted":260.667},
-  {"year":2021,"actual":267.142,"predicted":270.900},
-  {"year":2022,"actual":272.573,"predicted":281.046},
-  {"year":2023,"actual":264.389,"predicted":277.655},
+  {
+    "year": 2010,
+    "actual": 241.019,
+    "predicted": 252.632
+  },
+  {
+    "year": 2011,
+    "actual": 244.878,
+    "predicted": 252.295
+  },
+  {
+    "year": 2012,
+    "actual": 262.348,
+    "predicted": 269.618
+  },
+  {
+    "year": 2013,
+    "actual": 263.754,
+    "predicted": 272.429
+  },
+  {
+    "year": 2014,
+    "actual": 272.488,
+    "predicted": 276.394
+  },
+  {
+    "year": 2015,
+    "actual": 277.099,
+    "predicted": 275.767
+  },
+  {
+    "year": 2016,
+    "actual": 284.045,
+    "predicted": 284.587
+  },
+  {
+    "year": 2017,
+    "actual": 283.348,
+    "predicted": 285.607
+  },
+  {
+    "year": 2018,
+    "actual": 288.305,
+    "predicted": 297.73
+  },
+  {
+    "year": 2019,
+    "actual": 281.877,
+    "predicted": 294.05
+  },
+  {
+    "year": 2020,
+    "actual": 271.923,
+    "predicted": 261.883
+  },
+  {
+    "year": 2021,
+    "actual": 267.142,
+    "predicted": 274.955
+  },
+  {
+    "year": 2022,
+    "actual": 272.573,
+    "predicted": 283.009
+  },
+  {
+    "year": 2023,
+    "actual": 264.389,
+    "predicted": 282.67
+  },
 ];
 
 const randomForestFeatures = {
@@ -69,21 +181,78 @@ const randomForestFeatures = {
 };
 
 const lightgbmPredictions: ModelPrediction[] = [
-  {"year":2010,"actual":241.019,"predicted":247.423},
-  {"year":2011,"actual":244.878,"predicted":266.465},
-  {"year":2012,"actual":262.348,"predicted":267.618},
-  {"year":2013,"actual":263.754,"predicted":287.052},
-  {"year":2014,"actual":272.488,"predicted":286.898},
-  {"year":2015,"actual":277.099,"predicted":287.091},
-  {"year":2016,"actual":284.045,"predicted":287.387},
-  {"year":2017,"actual":283.348,"predicted":294.988},
-  {"year":2018,"actual":288.305,"predicted":294.168},
-  {"year":2019,"actual":281.877,"predicted":292.557},
-  {"year":2020,"actual":271.923,"predicted":278.573},
-  {"year":2021,"actual":267.142,"predicted":280.190},
-  {"year":2022,"actual":272.573,"predicted":275.998},
-  {"year":2023,"actual":264.389,"predicted":269.650},
+  {
+    "year": 2010,
+    "actual": 241.019,
+    "predicted": 250.173
+  },
+  {
+    "year": 2011,
+    "actual": 244.878,
+    "predicted": 261.587
+  },
+  {
+    "year": 2012,
+    "actual": 262.348,
+    "predicted": 263.591
+  },
+  {
+    "year": 2013,
+    "actual": 263.754,
+    "predicted": 278.179
+  },
+  {
+    "year": 2014,
+    "actual": 272.488,
+    "predicted": 278.84
+  },
+  {
+    "year": 2015,
+    "actual": 277.099,
+    "predicted": 282.861
+  },
+  {
+    "year": 2016,
+    "actual": 284.045,
+    "predicted": 284.324
+  },
+  {
+    "year": 2017,
+    "actual": 283.348,
+    "predicted": 295.262
+  },
+  {
+    "year": 2018,
+    "actual": 288.305,
+    "predicted": 294.315
+  },
+  {
+    "year": 2019,
+    "actual": 281.877,
+    "predicted": 284.885
+  },
+  {
+    "year": 2020,
+    "actual": 271.923,
+    "predicted": 277.221
+  },
+  {
+    "year": 2021,
+    "actual": 267.142,
+    "predicted": 273.692
+  },
+  {
+    "year": 2022,
+    "actual": 272.573,
+    "predicted": 268.865
+  },
+  {
+    "year": 2023,
+    "actual": 264.389,
+    "predicted": 264.276
+  },
 ];
+
 const lightgbmFeatures = {
   "gdp": 836,
   "co2_per_gdp": 745,
@@ -138,20 +307,76 @@ const gradientBoostingFeatures = {
 
 
 const catboostPredictions: ModelPrediction[] = [
-  {"year":2010,"actual":241.019,"predicted":234.744},
-  {"year":2011,"actual":244.878,"predicted":233.445},
-  {"year":2012,"actual":262.348,"predicted":250.616},
-  {"year":2013,"actual":263.754,"predicted":256.101},
-  {"year":2014,"actual":272.488,"predicted":263.027},
-  {"year":2015,"actual":277.099,"predicted":265.584},
-  {"year":2016,"actual":284.045,"predicted":274.165},
-  {"year":2017,"actual":283.348,"predicted":295.600},
-  {"year":2018,"actual":288.305,"predicted":296.741},
-  {"year":2019,"actual":281.877,"predicted":300.781},
-  {"year":2020,"actual":271.923,"predicted":300.610},
-  {"year":2021,"actual":267.142,"predicted":289.136},
-  {"year":2022,"actual":272.573,"predicted":281.739},
-  {"year":2023,"actual":264.389,"predicted":270.186},
+  {
+    "year": 2010,
+    "actual": 241.019,
+    "predicted": 234.744
+  },
+  {
+    "year": 2011,
+    "actual": 244.878,
+    "predicted": 233.445
+  },
+  {
+    "year": 2012,
+    "actual": 262.348,
+    "predicted": 250.616
+  },
+  {
+    "year": 2013,
+    "actual": 263.754,
+    "predicted": 256.101
+  },
+  {
+    "year": 2014,
+    "actual": 272.488,
+    "predicted": 263.027
+  },
+  {
+    "year": 2015,
+    "actual": 277.099,
+    "predicted": 265.584
+  },
+  {
+    "year": 2016,
+    "actual": 284.045,
+    "predicted": 274.165
+  },
+  {
+    "year": 2017,
+    "actual": 283.348,
+    "predicted": 295.6
+  },
+  {
+    "year": 2018,
+    "actual": 288.305,
+    "predicted": 296.741
+  },
+  {
+    "year": 2019,
+    "actual": 281.877,
+    "predicted": 300.781
+  },
+  {
+    "year": 2020,
+    "actual": 271.923,
+    "predicted": 300.61
+  },
+  {
+    "year": 2021,
+    "actual": 267.142,
+    "predicted": 289.136
+  },
+  {
+    "year": 2022,
+    "actual": 272.573,
+    "predicted": 281.739
+  },
+  {
+    "year": 2023,
+    "actual": 264.389,
+    "predicted": 270.186
+  },
 ];
 
 const catboostFeatures = {

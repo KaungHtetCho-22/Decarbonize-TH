@@ -1,17 +1,17 @@
 {
-  "temperature_change_from_n2o": 0.9487,
-  "cement_co2_per_capita": 0.016,
-  "gdp": 0.0155,
-  "co2_per_gdp": 0.0088,
-  "coal_co2_per_capita": 0.0042,
-  "energy_per_capita": 0.0039,
+  "temperature_change_from_n2o": 0.9584,
+  "gdp": 0.0131,
+  "cement_co2_per_capita": 0.0124,
+  "co2_per_gdp": 0.0075,
+  "energy_per_capita": 0.0045,
   "nitrous_oxide_per_capita": 0.0018,
+  "coal_co2_per_capita": 0.0015,
   "population": 0.0003,
   "flaring_co2_per_capita": 0.0002,
   "co2_per_unit_energy": 0.0002,
-  "co2_including_luc_per_gdp": 0.0002,
   "year": 0.0002,
+  "co2_including_luc_per_gdp": 0.0001,
   "co2_growth_abs": 0.0,
-  "co2_including_luc_growth_abs": 0.0,
-  "co2_including_luc_per_unit_energy": 0.0
+  "co2_including_luc_per_unit_energy": 0.0,
+  "co2_including_luc_growth_abs": 0.0
 }
